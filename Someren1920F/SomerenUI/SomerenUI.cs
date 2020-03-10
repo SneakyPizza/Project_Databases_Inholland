@@ -59,7 +59,7 @@ namespace SomerenUI
                 foreach (SomerenModel.Student s in studentList)
                 {
 
-                    ListViewItem li = new ListViewItem(s.Name);
+                    ListViewItem li = new ListViewItem(s.FirstName);
                     listViewStudents.Items.Add(li);
                 }
             }
