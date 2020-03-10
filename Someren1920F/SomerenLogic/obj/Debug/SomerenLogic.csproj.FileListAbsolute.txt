@@ -16,3 +16,14 @@ C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\S
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenLogic\bin\Debug\SomerenModel.dll
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenLogic\bin\Debug\SomerenDAL.pdb
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenLogic\bin\Debug\SomerenModel.pdb
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.dll
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.pdb
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.dll
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.pdb
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.pdb
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.dll
+D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.pdb
