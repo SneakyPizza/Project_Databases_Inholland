@@ -30,3 +30,10 @@ D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1
 D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.Properties.Resources.resources
 D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.GenerateResource.cache
 D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.SomerenUI.resources
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.Properties.Resources.resources
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.GenerateResource.cache
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.CoreCompileInputs.cache
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.exe
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.pdb

@@ -24,16 +24,8 @@ namespace SomerenLogic
             {
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
                 List<Student> student = new List<Student>();
-                Student a = new Student();
-                a.Name = "Mr. Test Student";
-                a.Number = 474791;
-                a.BirthDate = DateTime.Parse("1990-07-04");
+                Student a = new Student(1, "Test", "Student", "111111@student.inholland.nl", "0612345678", 0);
                 student.Add(a);
-                Student b = new Student();
-                b.Name = "Mrs. Test Student";
-                b.Number = 197474;
-                b.BirthDate = DateTime.Parse("2019-03-04");
-                student.Add(b);
                 return student;
                 //throw new Exception("Someren couldn't connect to the database");
             }
