@@ -94,5 +94,15 @@ namespace SomerenUI
         {
             showPanel("Students");
         }
+
+        private void teacherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Teachers");
+        }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Rooms");
+        }
     }
 }

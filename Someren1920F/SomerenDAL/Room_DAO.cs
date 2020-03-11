@@ -17,9 +17,12 @@ namespace SomerenDAL
 
         public Room_DAO()
         {
+            /*
             string connString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
             dbConnection = new SqlConnection(connString);
+            */
         }
+
 
         public List<Room> Db_Get_All_Rooms()
         {
