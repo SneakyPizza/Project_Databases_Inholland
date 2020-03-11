@@ -13,7 +13,7 @@ namespace SomerenDAL
         {
             // DO NOT FORGET TO INSERT YOUR CONNECTION STRING NAMED 'SOMEREN DATABASE' IN YOUR APP.CONFIG!!
             
-                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SomerenDatabase"].ConnectionString);
+                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString);
                 adapter = new SqlDataAdapter();
              
         }
@@ -53,6 +53,7 @@ namespace SomerenDAL
         protected void ExecuteEditQuery(String query, SqlParameter[] sqlParameters)
         {
             SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
 
             try
             {
