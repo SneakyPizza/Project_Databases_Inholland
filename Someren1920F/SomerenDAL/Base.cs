@@ -53,8 +53,6 @@ namespace SomerenDAL
         protected void ExecuteEditQuery(String query, SqlParameter[] sqlParameters)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandType = CommandType.StoredProcedure;
-
             try
             {
                 command.Connection = OpenConnection();
@@ -80,6 +78,7 @@ namespace SomerenDAL
         protected DataTable ExecuteSelectQuery(String query, params SqlParameter[] sqlParameters)
         {
             SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
             DataTable dataTable;
             DataSet dataSet = new DataSet();
 
