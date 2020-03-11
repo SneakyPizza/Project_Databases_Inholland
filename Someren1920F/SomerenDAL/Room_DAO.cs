@@ -41,9 +41,9 @@ namespace SomerenDAL
         public Room ReadRoom(SqlDataReader reader)
         {
             int RoomID = (int)reader["RoomID"];
-            int Capacity = (int)reader["Capacity"];
             string RoomType = (string)reader["RoomType"];
-            return new Room(RoomID, Capacity, RoomType);
+            int Capacity = (int)reader["RoomCapacity"];
+            return new Room(RoomID, RoomType, Capacity);
         }
 
     }
