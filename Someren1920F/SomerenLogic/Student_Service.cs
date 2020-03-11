@@ -20,15 +20,18 @@ namespace SomerenLogic
                 List<Student> student = student_db.Db_Get_All_Students();
                 return student;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
                 List<Student> student = new List<Student>();
                 Student a = new Student(1, "Test", "Student", "111111@student.inholland.nl", "0612345678", 0);
                 student.Add(a);
                 return student;
+                throw;
                 //throw new Exception("Someren couldn't connect to the database");
+                
             }
+            
 
         }
     }
