@@ -9,16 +9,6 @@ namespace SomerenModel
 {
     public class Student
     {
-        public Student(int studentID, string firstName, string lastName, string emailAddress, string phoneNumber, int role)
-        {
-            StudentID = studentID;
-            FirstName = firstName;
-            LastName = lastName;
-            EmailAddress = emailAddress;
-            PhoneNumber = phoneNumber;
-            Role = role;
-        }
-
         public int StudentID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
