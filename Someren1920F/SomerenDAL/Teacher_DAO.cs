@@ -13,42 +13,31 @@ namespace SomerenDAL
 {
     public class Teacher_DAO : Base
     {
-        private SqlConnection dbConnection;
-
-        public Teacher_DAO()
+        public List<Teacher> Db_Get_All_Teachers()
         {
-            string connString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-            dbConnection = new SqlConnection(connString);
+            string query = "GetAllPersonInfo";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<Teacher> Db_Get_All_Teachers()// RoleID for teachers = 1
+        private List<Teacher> ReadTables(DataTable dataTable)
         {
-            dbConnection.Open();
-            SqlCommand cmd = new SqlCommand("GetAllPersonInfo", dbConnection);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@RoleID", 1);
-
-            SqlDataReader reader = cmd.ExecuteReader();
             List<Teacher> teachers = new List<Teacher>();
-            while (reader.Read())
+
+            foreach (DataRow dr in dataTable.Rows)
             {
-                Teacher teacher = ReadTeacher(reader);
+                Teacher teacher = new Teacher()
+                {
+                    TeacherID = (int)dr["PersonID"],
+                    FirstName = (String)(dr["Firstname"].ToString()),
+                    LastName = (String)(dr["Lastname"].ToString()),
+                    EmailAddress = (String)(dr["Email"].ToString()),
+                    PhoneNumber = (String)(dr["Phonenumber"].ToString()),
+                    Role = (int)dr["Role"]
+                };
                 teachers.Add(teacher);
             }
-            reader.Close();
-            dbConnection.Close();
             return teachers;
         }
-        public Teacher ReadTeacher(SqlDataReader reader)
-        {
-            int StudentID = (int)reader["CustomerID"];
-            string FirstName = (string)reader["FirstName"];
-            string LastName = (string)reader["LastName"];
-            string EmailAddress = (string)reader["EmailAddress"];
-            string PhoneNumber = (string)reader["PhoneNumber"];
-            int Role = (int)reader["Role"];
-            return new Teacher(StudentID, FirstName, LastName, EmailAddress, PhoneNumber, Role);
-        }
-
     }
 }
