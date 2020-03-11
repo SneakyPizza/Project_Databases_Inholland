@@ -24,7 +24,9 @@ namespace SomerenDAL
         public List<Room> Db_Get_All_Rooms()
         {
             dbConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Room", dbConnection);
+            SqlCommand cmd = new SqlCommand("GetAllRooms", dbConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@RoomCapacity", 0);
             SqlDataReader reader = cmd.ExecuteReader();
             List<Room> rooms = new List<Room>();
             while (reader.Read())
