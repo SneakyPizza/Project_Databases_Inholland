@@ -13,41 +13,31 @@ namespace SomerenDAL
 {
     public class Student_DAO : Base
     {
-        private SqlConnection dbConnection;
-
-        public Student_DAO()
+        public List<Student> Db_Get_All_Students()
         {
-            string connString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-            dbConnection = new SqlConnection(connString);
+            string query = "GetAllPersonInfo";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
-      
-        public List<Student> Db_Get_All_Students() // RoleID for students = 0
+
+        private List<Student> ReadTables(DataTable dataTable)
         {
-            dbConnection.Open();
-            SqlCommand cmd = new SqlCommand("GetAllPersonInfo", dbConnection);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@RoleID", 0);
-            SqlDataReader reader = cmd.ExecuteReader();
             List<Student> students = new List<Student>();
-            while (reader.Read())
+
+            foreach (DataRow dr in dataTable.Rows)
             {
-                Student student = ReadStudent(reader);
+                Student student = new Student()
+                {
+                    StudentID = (int)dr["PersonID"],
+                    FirstName = (String)(dr["Firstname"].ToString()),
+                    LastName = (String)(dr["Lastname"].ToString()),
+                    EmailAddress = (String)(dr["Email"].ToString()),
+                    PhoneNumber = (String)(dr["Phonenumber"].ToString()),
+                    Role = (int)dr["Role"]
+                };
                 students.Add(student);
             }
-            reader.Close();
-            dbConnection.Close();
             return students;
         }
-        public Student ReadStudent(SqlDataReader reader)
-        {
-            int StudentID = (int)reader["CustomerID"];
-            string FirstName = (string)reader["FirstName"];
-            string LastName = (string)reader["LastName"];
-            string EmailAddress = (string)reader["EmailAddress"];
-            string PhoneNumber = (string)reader["PhoneNumber"];
-            int Role = (int)reader["Role"];
-            return new Student(StudentID, FirstName, LastName, EmailAddress, PhoneNumber, Role);
-        }
-
     }
 }
