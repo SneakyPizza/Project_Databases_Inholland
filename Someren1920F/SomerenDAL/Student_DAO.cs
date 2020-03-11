@@ -21,7 +21,7 @@ namespace SomerenDAL
             dbConnection = new SqlConnection(connString);
         }
       
-        public List<Student> Db_Get_All_Students()
+        public List<Student> Db_Get_All_Students() // RoleID for students = 0
         {
             dbConnection.Open();
             SqlCommand cmd = new SqlCommand("GetAllPersonInfo", dbConnection);
