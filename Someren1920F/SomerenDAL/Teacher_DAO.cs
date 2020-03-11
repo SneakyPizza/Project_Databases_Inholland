@@ -24,7 +24,10 @@ namespace SomerenDAL
         public List<Teacher> Db_Get_All_Teachers()
         {
             dbConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Person WHERE Role = 1", dbConnection);
+            SqlCommand cmd = new SqlCommand("GetAllPersonInfo", dbConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@RoleID", 1);
+
             SqlDataReader reader = cmd.ExecuteReader();
             List<Teacher> teachers = new List<Teacher>();
             while (reader.Read())
