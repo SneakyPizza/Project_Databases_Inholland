@@ -16,7 +16,7 @@ namespace SomerenDAL
         public List<Student> Db_Get_All_Students()
         {
             string query = "GetAllPersonInfo";
-            SqlParameter[] sqlParameters = new SqlParameter[1];
+            SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
