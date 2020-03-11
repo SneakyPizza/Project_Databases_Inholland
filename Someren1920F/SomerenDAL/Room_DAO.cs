@@ -26,7 +26,7 @@ namespace SomerenDAL
             dbConnection.Open();
             SqlCommand cmd = new SqlCommand("GetAllRooms", dbConnection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@RoomCapacity", 0);
+            cmd.Parameters.AddWithValue("@RoomCapacity", 16);
             SqlDataReader reader = cmd.ExecuteReader();
             List<Room> rooms = new List<Room>();
             while (reader.Read())
