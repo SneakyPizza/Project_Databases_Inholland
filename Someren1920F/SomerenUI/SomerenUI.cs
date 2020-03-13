@@ -46,13 +46,13 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                
                 pnl_teachers.Hide();
                 pnl_Rooms.Hide();
 
                 // show students
                 pnl_Students.Show();
 
+                
 
 
                 // fill the students listview within the students panel with a list of students
@@ -73,14 +73,33 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                
                 pnl_Students.Hide();
                 pnl_Rooms.Hide();
 
                 // show teachers
                 pnl_teachers.Show();
+                listViewteachers.Show();
 
                 
+
+                Teacher_Service TeacherService = new Teacher_Service();
+                List<Teacher> lt = TeacherService.GetTeachers();
+                listViewteachers.Clear();
+                foreach (Teacher t in lt)
+                {
+                    /* ListViewItem li = new ListViewItem(t.TeacherID.ToString());
+                     li.Tag = reservering
+                     li.SubItems.Add(t.FirstName);
+                     li.SubItems.Add(t.LastName);
+                     li.SubItems.Add(t.EmailAddress);
+                     li.SubItems.Add(t.PhoneNumber);
+                     listViewteachers.Items.Add(li); */
+
+                    string[] sr = { t.FirstName, t.LastName, t.EmailAddress, t.PhoneNumber };
+                    ListViewItem i = new ListViewItem(t.FirstName);
+                    i.SubItems.Add(t.FirstName);
+                    listViewteachers.Items.Add(i);
+                }
 
 
             }
@@ -88,7 +107,6 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                
                 pnl_Students.Hide();
                 pnl_teachers.Hide();
 
@@ -116,11 +134,6 @@ namespace SomerenUI
         }
 
 
-        private void img_Dashboard_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Students");
@@ -144,10 +157,6 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
-        private void listViewteachers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
