@@ -17,8 +17,10 @@ namespace SomerenDAL
 
         public Teacher_DAO()
         {
+            
             string connString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
             dbConnection = new SqlConnection(connString);
+        
         }
 
         public List<Teacher> Db_Get_All_Teachers()

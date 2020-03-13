@@ -1,5 +1,6 @@
 ﻿using SomerenLogic;
 using SomerenModel;
+using SomerenDAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,7 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
+        
         private void showPanel(string panelName)
         {
 
@@ -38,13 +40,13 @@ namespace SomerenUI
 
                 // show dashboard
                 pnl_Dashboard.Show();
-                img_Dashboard.Show();
+                
             }
             else if (panelName == "Students")
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
+                
                 pnl_teachers.Hide();
                 pnl_Rooms.Hide();
 
@@ -71,14 +73,14 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
+                
                 pnl_Students.Hide();
                 pnl_Rooms.Hide();
 
                 // show teachers
                 pnl_teachers.Show();
 
-
+                
 
 
             }
@@ -86,7 +88,7 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
+                
                 pnl_Students.Hide();
                 pnl_teachers.Hide();
 
@@ -113,14 +115,10 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void img_Dashboard_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("What happens in Someren, stays in Someren!");
+            
         }
 
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,29 +144,14 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void listViewteachers_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void pnl_Rooms_Paint(object sender, PaintEventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pnl_teachers_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl_Rooms_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("What happens in Someren, stays in Someren!");
         }
     }
 }
