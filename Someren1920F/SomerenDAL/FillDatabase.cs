@@ -9,64 +9,27 @@ using System.Data;
 
 namespace SomerenDAL
 {
-    public class FillDatabase
+    public class FillDatabase : Base
     {
-        public void InsertString(List<string> str, SqlConnection sqlcon)
+        public void BulkInsertPerson()
         {
-            string cmd = "INSERT @parameter INTO Person Where";
-            SqlCommand sc = new SqlCommand(cmd, sqlcon);
+            SqlConnection conn = null;
+            SqlCommand c = new SqlCommand("BulkInsertPerson");
+            c.CommandType = CommandType.StoredProcedure;
 
-
-            foreach(string s in str)
+            try
             {
-                sc.Parameters.Clear();
-                sc.Parameters.Add("", s);
-
-            }
-        }
-
-        public void InsertPerson(List<string> firstname, List<string> lastname, DateTime date, SqlConnection conn)
-        {
-            /* CREATE TABLE Person(
-	    ID int NOT NULL PRIMARY KEY,
-	    Firstname nvarchar(20) NOT NULL,
-	    Lastname nvarchar(20) NOT NULL,
-	    Email nvarchar(40) NOT NULL,
-	    Phonenumber nvarchar(13) NOT NULL,
-	    [Role] bit(1) NOT NULL
-         ) */
-
-            string cmdstring = "";
-            SqlCommand cmd = new SqlCommand(cmdstring, conn);
-            cmd.Parameters.Add("@Firstname", SqlDbType.NVarChar);
-            cmd.Parameters.Add("@Lastname", SqlDbType.NVarChar);
-            cmd.Parameters.Add("@Birthdate", SqlDbType.Date);
-
-
-
-            for (int i = 0; i < firstname.Count; i++)
+               conn = OpenConnection();
+                c.ExecuteNonQuery();
+                
+            } catch(SqlException e)
             {
-                cmd.Parameters["@Firstname"].Value = firstname[i];
-                cmd.Parameters["@Lastname"].Value = lastname[i];
-                cmd.Parameters["@Birthdate"].Value = date;
-                cmd.ExecuteNonQuery();
+                Console.WriteLine(e.Message);
             }
-
-        }
-
-
-        public List<string> ReadText(string path)
-        {
-            List<string> stringl = new List<string>();
-            string line;
-
-            StreamReader sr = new StreamReader(path);
-            while((line = sr.ReadLine()) != null)
+            finally
             {
-                stringl.Add(line);
+                conn.Close();
             }
-            sr.Close();
-            return stringl;
         }
     }
 }

@@ -1,7 +1,7 @@
-USE [ProjectDatabase]
+USE [ProjectDatabase];
 
 CREATE TABLE Person(
-    PersonID int NOT NULL PRIMARY KEY,
+    PersonID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     Firstname nvarchar(20) NOT NULL,
     Lastname nvarchar(20) NOT NULL,
     Email nvarchar(40) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE Person(
 );
 
 CREATE TABLE [Order](
-    OrderID int NOT NULL PRIMARY KEY,
+    OrderID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     PersonID int NOT NULL FOREIGN KEY REFERENCES Person(PersonID),
     Amount int NOT NULL,
     --ProductID int NOT NULL FOREIGN KEY REFERENCES Product(ID),
@@ -18,14 +18,14 @@ CREATE TABLE [Order](
 );
 
 CREATE TABLE Room (
-    RoomID int NOT NULL PRIMARY KEY,
+    RoomID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     PersonID int NOT NULL FOREIGN KEY REFERENCES Person(PersonID),
     RoomType nvarchar(20) NOT NULL,
 	RoomCapacity int NOT NULL
 );
 
 CREATE TABLE [Event](
-    EventID int NOT NULL PRIMARY KEY,
+    EventID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     --ActivityID int NOT NULL FOREIGN KEY REFERENCES Activity(ID),
     [Date] datetime NOT NULL,
     [Description] nvarchar(30) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE [Event](
 );
 
 CREATE TABLE Sales(
-    salesID int NOT NULL PRIMARY KEY,
+    salesID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     orderId int NOT NULL FOREIGN KEY REFERENCES [Order](OrderID),
     Price money NOT NULL,
     [Date] datetime NOT NULL,
@@ -42,14 +42,14 @@ CREATE TABLE Sales(
 );
 
 CREATE TABLE Activity(
-    ActivityID int NOT NULL PRIMARY KEY,
+    ActivityID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     [Name] nvarchar(30) NOT NULL,
     [Date] datetime NOT NULL,
     [Description] nvarchar(30) NOT NULL
     );
 
 CREATE TABLE Product(
-    ProductID int NOT NULL PRIMARY KEY,
+    ProductID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     [Name] nvarchar(20) NOT NULL,
     Price money NOT NULL,
     BTWPercentile int NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE Product(
 );
 
 CREATE TABLE [EventJunction](
-    EventJunctionID int NOT NULL PRIMARY KEY,
+    EventJunctionID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     PersonID int NOT NULL FOREIGN KEY REFERENCES Person(PersonID),
     EventID int NOT NULL FOREIGN KEY REFERENCES [Event](EventID)
 );

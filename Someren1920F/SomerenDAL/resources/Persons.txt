@@ -1,0 +1,21 @@
+Evan,Orozco,EvanOrozco@mail.com,07037168849, 0 \n
+Anderson,Stevenson,anders@mail.com,08121314384,1\n
+Dusty,Garner,dusty@mail.com,v08146612435,0\n
+Carol,Roberts, Carol@mail.com, 08067031547,1\n
+Daniel,Chambers, Daniel@mail.com, 08057044996,0\n
+Lemuel,Gilmore,Gilmore@mail.com,08167023680,1\n
+Lupe,Lynn,lupe@mail.com,08154884746,0\n
+Lowell,Roth,roth@mail.com,07064486647,1\n
+Otha, James, james@mail.com,07036804377, 0\n
+Isreal, Gamble, Gamble@mail.com,07065933679, 1\n
+Hassan, Shelton, Hassan@mail.com,08063010816, 0\n
+Ahmed, Key, ahmed@mail.com, 08061563416,1\n
+Kris, Buck, Kris@mail.com, 08137288864,0\n
+Gaylord, Wise, gaylord@mail.com, 08095100590,1\n
+Herbert, Harrell, Herbzco@mail.com, 08081072195,0\n
+Jarrod, Colon, colon@mail.com, 08084390524,1\n
+Jack, Wade, Wade@mail.com, 08195030949,0\n
+Jewel,Mullins,Mullins@mail.com,08024587633,1\n
+Michael,Liu,Liu@mail.com,08139847092,0\n
+Vance,Manning,Manning@mail.com,08168192723,1\n
+
