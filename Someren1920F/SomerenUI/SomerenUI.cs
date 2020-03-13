@@ -1,5 +1,6 @@
 ﻿using SomerenLogic;
 using SomerenModel;
+using SomerenDAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,29 +26,34 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
+        
         private void showPanel(string panelName)
         {
 
-            if(panelName == "Dashboard")
+            if (panelName == "Dashboard")
             {
 
                 // hide all other panels
                 pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Rooms.Hide();
 
                 // show dashboard
                 pnl_Dashboard.Show();
-                img_Dashboard.Show();
+                
             }
-            else if(panelName == "Students")
+            else if (panelName == "Students")
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
+                
+                pnl_teachers.Hide();
+                pnl_Rooms.Hide();
 
                 // show students
                 pnl_Students.Show();
 
-                
+
 
                 // fill the students listview within the students panel with a list of students
                 SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
@@ -59,9 +65,38 @@ namespace SomerenUI
                 foreach (SomerenModel.Student s in studentList)
                 {
 
-                    ListViewItem li = new ListViewItem(s.Name);
+                    ListViewItem li = new ListViewItem(s.FirstName);
                     listViewStudents.Items.Add(li);
                 }
+            }
+            else if (panelName == "Teachers")
+            {
+                // hide all other panels
+                pnl_Dashboard.Hide();
+                
+                pnl_Students.Hide();
+                pnl_Rooms.Hide();
+
+                // show teachers
+                pnl_teachers.Show();
+
+                
+
+
+            }
+            else if (panelName == "Rooms")
+            {
+                // hide all other panels
+                pnl_Dashboard.Hide();
+                
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+
+                // show rooms
+                pnl_Rooms.Show();
+
+
+
             }
         }
 
@@ -80,19 +115,43 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void img_Dashboard_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("What happens in Someren, stays in Someren!");
+            
         }
 
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Students");
+
+        }
+
+        private void teacherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Teachers");
+        }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Rooms");
+        }
+
+
+
+        private void dashbordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Dashboard");
+        }
+
+        private void listViewteachers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("What happens in Someren, stays in Someren!");
         }
     }
 }

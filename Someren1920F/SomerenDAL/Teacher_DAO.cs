@@ -11,34 +11,34 @@ using SomerenModel;
 
 namespace SomerenDAL
 {
-    public class Student_DAO : Base
+    public class Teacher_DAO : Base
     {
         private SqlConnection dbConnection;
 
-        public Student_DAO()
+        public Teacher_DAO()
         {
-            /*          
+            
             string connString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
             dbConnection = new SqlConnection(connString);
-            */
+        
         }
-      
-        public List<Student> Db_Get_All_Students()
+
+        public List<Teacher> Db_Get_All_Teachers()
         {
             dbConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Person WHERE Role = 0", dbConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Person WHERE Role = 1", dbConnection);
             SqlDataReader reader = cmd.ExecuteReader();
-            List<Student> students = new List<Student>();
+            List<Teacher> teachers = new List<Teacher>();
             while (reader.Read())
             {
-                Student student = ReadStudent(reader);
-                students.Add(student);
+                Teacher teacher = ReadTeacher(reader);
+                teachers.Add(teacher);
             }
             reader.Close();
             dbConnection.Close();
-            return students;
+            return teachers;
         }
-        public Student ReadStudent(SqlDataReader reader)
+        public Teacher ReadTeacher(SqlDataReader reader)
         {
             int StudentID = (int)reader["CustomerID"];
             string FirstName = (string)reader["FirstName"];
@@ -46,7 +46,7 @@ namespace SomerenDAL
             string EmailAddress = (string)reader["EmailAddress"];
             string PhoneNumber = (string)reader["PhoneNumber"];
             int Role = (int)reader["Role"];
-            return new Student(StudentID, FirstName, LastName, EmailAddress, PhoneNumber, Role);
+            return new Teacher(StudentID, FirstName, LastName, EmailAddress, PhoneNumber, Role);
         }
 
     }
