@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Collections.ObjectModel;
 using SomerenModel;
+using System.Data.SqlTypes;
 
 namespace SomerenDAL
 {
@@ -15,9 +16,9 @@ namespace SomerenDAL
     {
         public List<Student> Db_Get_All_Students()
         {
-            string query = "GetAllPersonInfo";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            SqlParameter sqlParameter = new SqlParameter("@RoleID", 0);
+            SqlParameter[] sqlp = new SqlParameter[] { sqlParameter };
+            return ReadTables(ExecuteSelectQuery("GetAllPersonInfo", sqlp));
         }
 
         private List<Student> ReadTables(DataTable dataTable)
@@ -26,15 +27,12 @@ namespace SomerenDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                Student student = new Student()
-                {
-                    StudentID = (int)dr["PersonID"],
-                    FirstName = (String)(dr["Firstname"].ToString()),
-                    LastName = (String)(dr["Lastname"].ToString()),
-                    EmailAddress = (String)(dr["Email"].ToString()),
-                    PhoneNumber = (String)(dr["Phonenumber"].ToString()),
-                    Role = (int)dr["Role"]
-                };
+                int id = (int)dr["PersonID"];
+                string firstname = (String)(dr["Firstname"].ToString());
+                string lastname = (String)(dr["Lastname"].ToString());
+                string email = (String)(dr["Email"].ToString());
+                string phonenumber = (String)(dr["Phonenumber"].ToString());
+                Student student = new Student(id, firstname, lastname, email, phonenumber);
                 students.Add(student);
             }
             return students;

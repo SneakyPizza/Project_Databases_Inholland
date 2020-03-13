@@ -15,9 +15,9 @@ namespace SomerenDAL
     {
         public List<Room> Db_Get_All_Rooms()
         {
-            string query = "GetAllRooms";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            SqlParameter sqlParameter = new SqlParameter("@RoomID", 16);
+            SqlParameter[] sqlp = new SqlParameter[] { sqlParameter };
+            return ReadTables(ExecuteSelectQuery("GetAllPersonInfo", sqlp));
         }
 
         private List<Room> ReadTables(DataTable dataTable)
@@ -26,12 +26,10 @@ namespace SomerenDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                Room room = new Room()
-                {
-                    RoomID = (int)dr["RoomID"],
-                    RoomType = (String)(dr["RoomType"].ToString()),
-                    Capacity = (int)(dr["RoomCapacity"])
-                };
+                int id = (int)dr["RoomID"];
+                string roomtype = (String)(dr["RoomType"].ToString());
+                int capacity = (int)(dr["RoomCapacity"]);
+                Room room = new Room(id, roomtype, capacity);
                 rooms.Add(room);
             }
             return rooms;

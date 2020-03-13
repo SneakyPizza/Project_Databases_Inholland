@@ -12,10 +12,8 @@ namespace SomerenDAL
         public Base()
         {
             // DO NOT FORGET TO INSERT YOUR CONNECTION STRING NAMED 'connectionString' IN YOUR APP.CONFIG!!
-            
                 conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString);
                 adapter = new SqlDataAdapter();
-             
         }
 
         protected SqlConnection OpenConnection()
