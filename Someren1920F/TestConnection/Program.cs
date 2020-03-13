@@ -30,6 +30,33 @@ namespace TestConnection
                 Console.WriteLine(student);
             }
             Console.ReadKey();
+            //display all teachers
+            Teacher_DAO teacherDAO = new Teacher_DAO();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Displaying all teachers...");
+            Console.ResetColor();
+
+            List<Teacher> teachers = teacherDAO.Db_Get_All_Teachers();
+            foreach (Teacher teacher in teachers)
+            {
+                Console.WriteLine(teacher);
+            }
+            Console.ReadKey();
+            //display all rooms
+            Room_DAO roomDAO = new Room_DAO();
+
+            //display all students
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Displaying all rooms...");
+            Console.ResetColor();
+
+            List<Room> rooms = roomDAO.Db_Get_All_Rooms();
+            foreach (Room room in rooms)
+            {
+                Console.WriteLine(room);
+            }
+            Console.ReadKey();
         }
     }
 }

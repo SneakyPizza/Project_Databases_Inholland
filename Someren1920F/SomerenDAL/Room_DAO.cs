@@ -15,9 +15,9 @@ namespace SomerenDAL
     {
         public List<Room> Db_Get_All_Rooms()
         {
-            SqlParameter sqlParameter = new SqlParameter("@RoomID", 16);
+            SqlParameter sqlParameter = new SqlParameter("@RoomCapacity", 16);
             SqlParameter[] sqlp = new SqlParameter[] { sqlParameter };
-            return ReadTables(ExecuteSelectQuery("GetAllPersonInfo", sqlp));
+            return ReadTables(ExecuteSelectQuery("GetAllRooms", sqlp));
         }
 
         private List<Room> ReadTables(DataTable dataTable)
