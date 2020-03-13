@@ -17,7 +17,7 @@ namespace SomerenDAL
 
         public Student_DAO()
         {
-            /*
+            /*          
             string connString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
             dbConnection = new SqlConnection(connString);
             */
