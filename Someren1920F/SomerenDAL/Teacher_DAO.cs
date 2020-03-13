@@ -13,41 +13,28 @@ namespace SomerenDAL
 {
     public class Teacher_DAO : Base
     {
-        private SqlConnection dbConnection;
-
-        public Teacher_DAO()
-        {
-            
-            string connString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-            dbConnection = new SqlConnection(connString);
-        
-        }
-
         public List<Teacher> Db_Get_All_Teachers()
         {
-            dbConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Person WHERE Role = 1", dbConnection);
-            SqlDataReader reader = cmd.ExecuteReader();
-            List<Teacher> teachers = new List<Teacher>();
-            while (reader.Read())
-            {
-                Teacher teacher = ReadTeacher(reader);
-                teachers.Add(teacher);
-            }
-            reader.Close();
-            dbConnection.Close();
-            return teachers;
-        }
-        public Teacher ReadTeacher(SqlDataReader reader)
-        {
-            int StudentID = (int)reader["CustomerID"];
-            string FirstName = (string)reader["FirstName"];
-            string LastName = (string)reader["LastName"];
-            string EmailAddress = (string)reader["EmailAddress"];
-            string PhoneNumber = (string)reader["PhoneNumber"];
-            int Role = (int)reader["Role"];
-            return new Teacher(StudentID, FirstName, LastName, EmailAddress, PhoneNumber, Role);
+            SqlParameter sqlParameter = new SqlParameter("@RoleID", 1);
+            SqlParameter[] sqlp = new SqlParameter[] { sqlParameter };
+            return ReadTables(ExecuteSelectQuery("GetAllPersonInfo", sqlp));
         }
 
+        private List<Teacher> ReadTables(DataTable dataTable)
+        {
+            List<Teacher> teachers = new List<Teacher>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                int id = (int)dr["PersonID"];
+                string firstname = (String)(dr["Firstname"].ToString());
+                string lastname = (String)(dr["Lastname"].ToString());
+                string email = (String)(dr["Email"].ToString());
+                string phonenumber = (String)(dr["Phonenumber"].ToString());
+                Teacher teacher = new Teacher(id, firstname, lastname, email, phonenumber);
+                teachers.Add(teacher);
+            }
+            return teachers;
+        }
     }
 }

@@ -11,11 +11,10 @@ namespace SomerenDAL
         private SqlConnection conn;
         public Base()
         {
-            // DO NOT FORGET TO INSERT YOUR CONNECTION STRING NAMED 'SOMEREN DATABASE' IN YOUR APP.CONFIG!!
-            /*
-                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SomerenDatabase"].ConnectionString);
+            // DO NOT FORGET TO INSERT YOUR CONNECTION STRING NAMED 'connectionString' IN YOUR APP.CONFIG!!
+                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString);
                 adapter = new SqlDataAdapter();
-             */
+
         }
 
         protected SqlConnection OpenConnection()
@@ -53,7 +52,6 @@ namespace SomerenDAL
         protected void ExecuteEditQuery(String query, SqlParameter[] sqlParameters)
         {
             SqlCommand command = new SqlCommand();
-
             try
             {
                 command.Connection = OpenConnection();
@@ -79,6 +77,7 @@ namespace SomerenDAL
         protected DataTable ExecuteSelectQuery(String query, params SqlParameter[] sqlParameters)
         {
             SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
             DataTable dataTable;
             DataSet dataSet = new DataSet();
 

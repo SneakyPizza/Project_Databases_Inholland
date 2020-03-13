@@ -13,39 +13,26 @@ namespace SomerenDAL
 {
     public class Room_DAO : Base
     {
-        private SqlConnection dbConnection;
-
-        public Room_DAO()
-        {
-            /*
-            string connString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-            dbConnection = new SqlConnection(connString);
-            */
-        }
-
-
         public List<Room> Db_Get_All_Rooms()
         {
-            dbConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Room", dbConnection);
-            SqlDataReader reader = cmd.ExecuteReader();
-            List<Room> rooms = new List<Room>();
-            while (reader.Read())
-            {
-                Room room = ReadRoom(reader);
-                rooms.Add(room);
-            }
-            reader.Close();
-            dbConnection.Close();
-            return rooms;
-        }
-        public Room ReadRoom(SqlDataReader reader)
-        {
-            int RoomID = (int)reader["RoomID"];
-            int Capacity = (int)reader["Capacity"];
-            string RoomType = (string)reader["RoomType"];
-            return new Room(RoomID, Capacity, RoomType);
+            SqlParameter sqlParameter = new SqlParameter("@RoomCapacity", 16);
+            SqlParameter[] sqlp = new SqlParameter[] { sqlParameter };
+            return ReadTables(ExecuteSelectQuery("GetAllRooms", sqlp));
         }
 
+        private List<Room> ReadTables(DataTable dataTable)
+        {
+            List<Room> rooms = new List<Room>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                int id = (int)dr["RoomID"];
+                string roomtype = (String)(dr["RoomType"].ToString());
+                int capacity = (int)(dr["RoomCapacity"]);
+                Room room = new Room(id, roomtype, capacity);
+                rooms.Add(room);
+            }
+            return rooms;
+        }
     }
 }

@@ -8,22 +8,25 @@ namespace SomerenModel
 {
     public class Teacher
     {
-        public Teacher(int studentID, string firstName, string lastName, string emailAddress, string phoneNumber, int role)
+        public Teacher(int id, string firstname, string lastname, string email, string phonenumber)
         {
-            StudentID = studentID;
-            FirstName = firstName;
-            LastName = lastName;
-            EmailAddress = emailAddress;
-            PhoneNumber = phoneNumber;
-            Role = role;
+            TeacherID = id;
+            FirstName = firstname;
+            LastName = lastname;
+            EmailAddress = email;
+            PhoneNumber = phonenumber;
         }
 
-        public int StudentID { get; set; }
+        public int TeacherID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
-        public int Role { get; set; } // student 0, docent 1
+
+        public override string ToString()
+        {
+            return string.Format("{0}. {1} {2} (Email: {3})", TeacherID, FirstName, LastName, EmailAddress);
+        }
 
     }
 }
