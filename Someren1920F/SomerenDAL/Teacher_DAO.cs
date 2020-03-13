@@ -35,7 +35,7 @@ namespace SomerenDAL
                 teachers.Add(teacher);
             }
             reader.Close();
-            dbConnection.Close();
+            dbConnection.Close(); 
             return teachers;
         }
         public Teacher ReadTeacher(SqlDataReader reader)
