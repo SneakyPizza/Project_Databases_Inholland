@@ -26,7 +26,7 @@ namespace SomerenLogic
             {
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
                 List<Room> room = new List<Room>();
-                Room a = new Room(69420, "Grote kamer", 6);
+                Room a = new Room(69420, 6, "Grote kamer");
                 room.Add(a);
                 return room;
                 

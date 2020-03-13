@@ -162,5 +162,10 @@ namespace SomerenUI
         {
             MessageBox.Show("What happens in Someren, stays in Someren!");
         }
+
+        private void listViewteachers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

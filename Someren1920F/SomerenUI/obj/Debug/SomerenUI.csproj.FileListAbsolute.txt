@@ -67,14 +67,21 @@ D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI
 D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenDAL.dll.config
 D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenLogic.pdb
 D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenModel.pdb
-<<<<<<< Updated upstream
 D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
-=======
-D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
-D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.SomerenUI.resources
-D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.Properties.Resources.resources
-D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.GenerateResource.cache
-D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
-D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.exe
-D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.pdb
->>>>>>> Stashed changes
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenUI.exe.config
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenUI.exe
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenUI.pdb
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenDAL.dll
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenLogic.dll
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenModel.dll
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenDAL.pdb
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenDAL.dll.config
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenLogic.pdb
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\bin\Debug\SomerenModel.pdb
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.SomerenUI.resources
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.Properties.Resources.resources
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.GenerateResource.cache
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.exe
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.pdb

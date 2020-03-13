@@ -11,16 +11,13 @@ namespace SomerenDAL
         private SqlConnection conn;
         public Base()
         {
-<<<<<<< Updated upstream
+
             // DO NOT FORGET TO INSERT YOUR CONNECTION STRING NAMED 'SOMEREN DATABASE' IN YOUR APP.CONFIG!!
-            /*
-                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SomerenDatabase"].ConnectionString);
-=======
+
             // DO NOT FORGET TO INSERT YOUR CONNECTION STRING NAMED 'connectionString' IN YOUR APP.CONFIG!!
                 conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TESTDB"].ConnectionString);
->>>>>>> Stashed changes
+
                 adapter = new SqlDataAdapter();
-             */
         }
 
         protected SqlConnection OpenConnection()

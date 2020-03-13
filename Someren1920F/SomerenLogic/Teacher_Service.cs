@@ -28,7 +28,7 @@ namespace SomerenLogic
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
 
                 List<Teacher> teacher = new List<Teacher>();
-                Teacher a = new Teacher(1433, e.Message, "691420@inholland.nl", "0612345678", "0");
+                Teacher a = new Teacher(1433, e.Message, "691420@inholland.nl", "0612345678", "0", 0);
                 teacher.Add(a);
                 return teacher;
                 throw;
