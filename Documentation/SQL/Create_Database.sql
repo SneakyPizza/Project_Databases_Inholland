@@ -1,3 +1,5 @@
+CREATE DATABASE [ProjectDatabase]
+
 USE [ProjectDatabase];
 
 CREATE TABLE Person(
@@ -13,7 +15,7 @@ CREATE TABLE [Order](
     OrderID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     PersonID int NOT NULL FOREIGN KEY REFERENCES Person(PersonID),
     Amount int NOT NULL,
-    --ProductID int NOT NULL FOREIGN KEY REFERENCES Product(ID),
+    ProductID int NOT NULL FOREIGN KEY REFERENCES Product(ProductID),
     [Timestamp] nvarchar(10) NOT NULL,
 );
 
@@ -64,8 +66,12 @@ CREATE TABLE [EventJunction](
 );
 
 ALTER TABLE [Order]
-	ADD CONSTRAINT ProductID FOREIGN KEY (OrderID) REFERENCES Product(ProductID);
+	ADD ProductID int;
+
+ALTER TABLE [Order]
+	ADD FOREIGN KEY (ProductID) REFERENCES Product(ProductID);
 
 ALTER TABLE [Event]
 	ADD CONSTRAINT ActivityID FOREIGN KEY (EventID) REFERENCES Activity(ActivityID),
         CONSTRAINT EventJunctionID FOREIGN KEY (EventID) REFERENCES EventJunction(EventJunctionID);
+
