@@ -26,7 +26,7 @@ namespace SomerenLogic
             {
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
                 List<Student> student = new List<Student>();
-                Student a = new Student(1, "Test", "Student", "111111@student.inholland.nl", "0612345678", 0);
+                Student a = new Student(1, "Test", "Student", "111111@student.inholland.nl", "0612345678");
                 student.Add(a);
                 return student;
                 throw;
@@ -48,7 +48,7 @@ namespace SomerenLogic
             {
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
                 List<Teacher> teacher = new List<Teacher>();
-                Teacher a = new Teacher(1, "Test", "Teacher", "691420@inholland.nl", "0612345678", 0);
+                Teacher a = new Teacher(1, "Test", "Teacher", "691420@inholland.nl", "0612345678");
                 teacher.Add(a);
                 return teacher;
                 throw;
@@ -70,7 +70,7 @@ namespace SomerenLogic
             {
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
                 List<Room> room = new List<Room>();
-                Room a = new Room(69420, 6, "Grote kamer");
+                Room a = new Room(69420, "Grote kamer", 6);
                 room.Add(a);
                 return room;
                 throw;
