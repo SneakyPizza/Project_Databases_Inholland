@@ -73,3 +73,15 @@ C:\Users\larsd\Downloads\Project_Databases_Inholland-master\Project_Databases_In
 C:\Users\larsd\Downloads\Project_Databases_Inholland-master\Project_Databases_Inholland-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
 C:\Users\larsd\Downloads\Project_Databases_Inholland-master\Project_Databases_Inholland-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.dll
 C:\Users\larsd\Downloads\Project_Databases_Inholland-master\Project_Databases_Inholland-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.pdb
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.dll
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.pdb
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.dll
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.pdb
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.pdb
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CoreCompileInputs.cache
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.dll
+C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.pdb
