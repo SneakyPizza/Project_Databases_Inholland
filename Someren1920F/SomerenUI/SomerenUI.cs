@@ -60,12 +60,16 @@ namespace SomerenUI
                 List<Student> studentList = studService.GetStudents();
 
                 // clear the listview before filling it again
-                listViewStudents.Clear();
+                listViewStudents.Items.Clear();
 
                 foreach (SomerenModel.Student s in studentList)
                 {
 
-                    ListViewItem li = new ListViewItem(s.FirstName);
+                    ListViewItem li = new ListViewItem(s.StudentID.ToString());
+                    li.SubItems.Add(s.FirstName);
+                    li.SubItems.Add(s.LastName);
+                    li.SubItems.Add(s.EmailAddress);
+                    li.SubItems.Add(s.PhoneNumber);
                     listViewStudents.Items.Add(li);
                 }
             }
@@ -80,7 +84,22 @@ namespace SomerenUI
                 // show teachers
                 pnl_teachers.Show();
 
-                
+                SomerenLogic.Teacher_Service teacherService = new SomerenLogic.Teacher_Service();
+                List<Teacher> teacherList = teacherService.GetTeachers();
+
+                // clear the listview before filling it again
+                listViewteachers.Items.Clear();
+
+                foreach (SomerenModel.Teacher t in teacherList)
+                {
+
+                    ListViewItem li = new ListViewItem(t.TeacherID.ToString());
+                    li.SubItems.Add(t.FirstName);
+                    li.SubItems.Add(t.LastName);
+                    li.SubItems.Add(t.EmailAddress);
+                    li.SubItems.Add(t.PhoneNumber);
+                    listViewteachers.Items.Add(li);
+                }
 
 
             }
@@ -95,7 +114,20 @@ namespace SomerenUI
                 // show rooms
                 pnl_Rooms.Show();
 
+                SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
+                List<Room> roomList = roomService.GetRoom();
 
+                // clear the listview before filling it again
+                listViewRooms.Items.Clear();
+
+                foreach (SomerenModel.Room r in roomList)
+                {
+
+                    ListViewItem li = new ListViewItem(r.RoomID.ToString());
+                    li.SubItems.Add(r.RoomType);
+                    li.SubItems.Add(r.Capacity.ToString());
+                    listViewRooms.Items.Add(li);
+                }
 
             }
         }
