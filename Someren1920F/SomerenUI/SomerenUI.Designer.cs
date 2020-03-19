@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SomerenUI));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Id");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("FirstName");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("LastName");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Email");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Phonenumber");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashboardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,6 +65,10 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_someren)).BeginInit();
@@ -187,6 +186,7 @@
             // pnl_Students
             // 
             this.pnl_Students.Controls.Add(this.lbl_list);
+            this.pnl_Students.Controls.Add(this.pnl_Rooms);
             this.pnl_Students.Controls.Add(this.listViewStudents);
             this.pnl_Students.Controls.Add(this.pictureBox1);
             this.pnl_Students.Controls.Add(this.lbl_Students);
@@ -209,13 +209,16 @@
             this.listViewStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.studentID,
             this.studentName,
-            this.studentDOB});
+            this.studentDOB,
+            this.columnHeader9,
+            this.columnHeader10});
             this.listViewStudents.HideSelection = false;
             this.listViewStudents.Location = new System.Drawing.Point(19, 40);
             this.listViewStudents.Name = "listViewStudents";
             this.listViewStudents.Size = new System.Drawing.Size(766, 307);
             this.listViewStudents.TabIndex = 5;
             this.listViewStudents.UseCompatibleStateImageBehavior = false;
+            this.listViewStudents.View = System.Windows.Forms.View.Details;
             // 
             // studentID
             // 
@@ -223,11 +226,13 @@
             // 
             // studentName
             // 
-            this.studentName.Text = "Name";
+            this.studentName.Text = "First name";
+            this.studentName.Width = 146;
             // 
             // studentDOB
             // 
-            this.studentDOB.Text = "Date of Birth";
+            this.studentDOB.Text = "Last name";
+            this.studentDOB.Width = 141;
             // 
             // pictureBox1
             // 
@@ -255,7 +260,7 @@
             this.pnl_teachers.Controls.Add(this.label1);
             this.pnl_teachers.Controls.Add(this.label2);
             this.pnl_teachers.Controls.Add(this.listViewteachers);
-            this.pnl_teachers.Location = new System.Drawing.Point(12, 26);
+            this.pnl_teachers.Location = new System.Drawing.Point(12, 24);
             this.pnl_teachers.Name = "pnl_teachers";
             this.pnl_teachers.Size = new System.Drawing.Size(938, 466);
             this.pnl_teachers.TabIndex = 9;
@@ -294,26 +299,33 @@
             this.listViewteachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
             this.listViewteachers.GridLines = true;
             this.listViewteachers.HideSelection = false;
-            listViewItem1.Tag = "id";
-            listViewItem2.Tag = "FirstName";
-            listViewItem3.Tag = "LastName";
-            listViewItem4.Tag = "Email";
-            listViewItem5.Tag = "Phonenumber";
-            this.listViewteachers.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
-            this.listViewteachers.Location = new System.Drawing.Point(19, 40);
+            this.listViewteachers.Location = new System.Drawing.Point(19, 42);
             this.listViewteachers.Name = "listViewteachers";
             this.listViewteachers.Size = new System.Drawing.Size(766, 307);
             this.listViewteachers.TabIndex = 5;
             this.listViewteachers.UseCompatibleStateImageBehavior = false;
+            this.listViewteachers.View = System.Windows.Forms.View.Details;
             this.listViewteachers.SelectedIndexChanged += new System.EventHandler(this.listViewteachers_SelectedIndexChanged);
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ID";
+            this.columnHeader4.Width = 45;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "First name";
+            this.columnHeader5.Width = 124;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Last name";
+            this.columnHeader6.Width = 188;
             // 
             // pnl_Rooms
             // 
@@ -321,7 +333,7 @@
             this.pnl_Rooms.Controls.Add(this.label4);
             this.pnl_Rooms.Controls.Add(this.listViewRooms);
             this.pnl_Rooms.Controls.Add(this.pictureBox3);
-            this.pnl_Rooms.Location = new System.Drawing.Point(12, 26);
+            this.pnl_Rooms.Location = new System.Drawing.Point(0, 1);
             this.pnl_Rooms.Name = "pnl_Rooms";
             this.pnl_Rooms.Size = new System.Drawing.Size(938, 466);
             this.pnl_Rooms.TabIndex = 10;
@@ -357,6 +369,7 @@
             this.listViewRooms.Size = new System.Drawing.Size(766, 307);
             this.listViewRooms.TabIndex = 5;
             this.listViewRooms.UseCompatibleStateImageBehavior = false;
+            this.listViewRooms.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -364,11 +377,12 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Text = "Room Type";
+            this.columnHeader2.Width = 89;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Date of Birth";
+            this.columnHeader3.Text = "Capacity";
             // 
             // pictureBox3
             // 
@@ -380,6 +394,26 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Email";
+            this.columnHeader7.Width = 197;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Phonenumber";
+            this.columnHeader8.Width = 205;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Email";
+            this.columnHeader9.Width = 149;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Phonenumber";
+            this.columnHeader10.Width = 217;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,7 +421,6 @@
             this.ClientSize = new System.Drawing.Size(962, 505);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnl_teachers);
-            this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -452,6 +485,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.PictureBox picture_someren;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }
 

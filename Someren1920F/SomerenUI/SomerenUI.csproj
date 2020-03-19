@@ -47,16 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SomerenUI.cs">
+    <Compile Include="..\..\..\..\SomerenUI.cs">
       <SubType>Form</SubType>
+      <Link>SomerenUI.cs</Link>
     </Compile>
-    <Compile Include="SomerenUI.Designer.cs">
+    <Compile Include="..\..\..\..\SomerenUI.Designer.cs">
       <DependentUpon>SomerenUI.cs</DependentUpon>
+      <Link>SomerenUI.Designer.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="SomerenUI.resx">
+    <EmbeddedResource Include="..\..\..\..\SomerenUI.resx">
       <DependentUpon>SomerenUI.cs</DependentUpon>
+      <Link>SomerenUI.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

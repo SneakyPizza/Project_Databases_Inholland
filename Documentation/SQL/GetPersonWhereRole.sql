@@ -1,4 +1,3 @@
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8,7 +7,7 @@ GO
 -- Create date: 10/03/2020
 -- Description: Get all Student information
 -- =============================================
-USE [ProjectSomeren]
+USE [ProjectDatabase];
 GO
 CREATE PROCEDURE dbo.GetAllPersonInfo
 	-- Add the parameters for the stored procedure here

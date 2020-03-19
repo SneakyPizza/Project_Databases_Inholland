@@ -46,59 +46,59 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
+                
                 pnl_teachers.Hide();
                 pnl_Rooms.Hide();
 
                 // show students
                 pnl_Students.Show();
 
-                
 
-
+                // clear the listview before filling it again
+                listViewStudents.Clear();
                 // fill the students listview within the students panel with a list of students
                 SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
                 List<Student> studentList = studService.GetStudents();
 
-                // clear the listview before filling it again
-                listViewStudents.Clear();
 
-                foreach (SomerenModel.Student s in studentList)
+
+                foreach (SomerenModel.Student student in studentList)
                 {
-
-                    ListViewItem li = new ListViewItem(s.FirstName);
-                    listViewStudents.Items.Add(li);
+                    ListViewItem item = new ListViewItem(student.StudentID.ToString());
+                    item.SubItems.Add(student.FirstName);
+                    item.SubItems.Add(student.LastName);
+                    item.SubItems.Add(student.EmailAddress);
+                    item.SubItems.Add(student.PhoneNumber);
+                    listViewStudents.Items.Add(item);
                 }
             }
             else if (panelName == "Teachers")
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
+                
                 pnl_Students.Hide();
                 pnl_Rooms.Hide();
 
                 // show teachers
                 pnl_teachers.Show();
-                listViewteachers.Show();
-
-                
-
-                Teacher_Service TeacherService = new Teacher_Service();
-                List<Teacher> lt = TeacherService.GetTeachers();
+                // clear the listview before filling it again
                 listViewteachers.Clear();
-                foreach (Teacher t in lt)
-                {
-                    /* ListViewItem li = new ListViewItem(t.TeacherID.ToString());
-                     li.Tag = reservering
-                     li.SubItems.Add(t.FirstName);
-                     li.SubItems.Add(t.LastName);
-                     li.SubItems.Add(t.EmailAddress);
-                     li.SubItems.Add(t.PhoneNumber);
-                     listViewteachers.Items.Add(li); */
 
-                    string[] sr = { t.FirstName, t.LastName, t.EmailAddress, t.PhoneNumber };
-                    ListViewItem i = new ListViewItem(t.FirstName);
-                    i.SubItems.Add(t.FirstName);
-                    listViewteachers.Items.Add(i);
+                // fill the teachers listview within the teachers panel with a list of teachers
+                SomerenLogic.Teacher_Service teacherService = new SomerenLogic.Teacher_Service();
+                List<Teacher> teacherList = teacherService.GetTeachers();
+
+
+
+                foreach (SomerenModel.Teacher teacher in teacherList)
+                {
+                    ListViewItem item = new ListViewItem(teacher.TeacherID.ToString());
+                    item.SubItems.Add(teacher.FirstName);
+                    item.SubItems.Add(teacher.LastName);
+                    item.SubItems.Add(teacher.EmailAddress);
+                    item.SubItems.Add(teacher.PhoneNumber);
+                    listViewteachers.Items.Add(item);
                 }
 
 
@@ -107,13 +107,28 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
+                
                 pnl_Students.Hide();
                 pnl_teachers.Hide();
 
                 // show rooms
                 pnl_Rooms.Show();
+                // clear the listview before filling it again
+                listViewRooms.Clear();
+
+                // fill the room listview within the room panel with a list of rooms
+                SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
+                List<Room> roomList = roomService.GetRoom();
 
 
+
+                foreach (SomerenModel.Room room in roomList)
+                {
+                    ListViewItem item = new ListViewItem(room.RoomID.ToString());
+                    item.SubItems.Add(room.RoomType);
+                    item.SubItems.Add(room.Capacity.ToString());
+                    listViewRooms.Items.Add(item);
+                }
 
             }
         }
@@ -133,6 +148,11 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
+
+        private void img_Dashboard_Click(object sender, EventArgs e)
+        {
+            
+        }
 
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -157,15 +177,14 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
+        private void listViewteachers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("What happens in Someren, stays in Someren!");
-        }
-
-        private void listViewteachers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
