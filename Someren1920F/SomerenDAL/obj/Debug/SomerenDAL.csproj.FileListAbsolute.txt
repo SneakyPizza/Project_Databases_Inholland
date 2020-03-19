@@ -80,3 +80,13 @@ C:\Users\larsd\Documents\GitHub\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.csp
 C:\Users\larsd\Documents\GitHub\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 C:\Users\larsd\Documents\GitHub\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.dll
 C:\Users\larsd\Documents\GitHub\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.pdb
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\bin\Debug\SomerenDAL.dll.config
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\bin\Debug\SomerenDAL.dll
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\bin\Debug\SomerenDAL.pdb
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\bin\Debug\SomerenModel.dll
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\bin\Debug\SomerenModel.pdb
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.csprojAssemblyReference.cache
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.csproj.CoreCompileInputs.cache
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.dll
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.pdb

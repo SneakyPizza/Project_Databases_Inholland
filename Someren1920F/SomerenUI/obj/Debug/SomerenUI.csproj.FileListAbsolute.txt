@@ -89,3 +89,6 @@ C:\Users\larsd\Documents\GitHub\Project_Databases_Inholland\Project_Databases_In
 C:\Users\larsd\Documents\GitHub\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
 C:\Users\larsd\Documents\GitHub\Someren1920F\SomerenUI\obj\Debug\SomerenUI.exe
 C:\Users\larsd\Documents\GitHub\Someren1920F\SomerenUI\obj\Debug\SomerenUI.pdb
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.exe
+C:\Users\larsd\Documents\Github\ProjectDatabase\Project_Databases_Inholland\Someren1920F\SomerenUI\obj\Debug\SomerenUI.pdb
