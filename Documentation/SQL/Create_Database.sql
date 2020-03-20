@@ -1,5 +1,3 @@
-CREATE DATABASE [ProjectDatabase]
-
 USE [ProjectDatabase];
 
 CREATE TABLE Person(
@@ -15,7 +13,7 @@ CREATE TABLE [Order](
     OrderID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     PersonID int NOT NULL FOREIGN KEY REFERENCES Person(PersonID),
     Amount int NOT NULL,
-    ProductID int NOT NULL FOREIGN KEY REFERENCES Product(ProductID),
+    --ProductID int NOT NULL FOREIGN KEY REFERENCES Product(ID),
     [Timestamp] nvarchar(10) NOT NULL,
 );
 
@@ -29,9 +27,11 @@ CREATE TABLE Room (
 CREATE TABLE [Event](
     EventID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     --ActivityID int NOT NULL FOREIGN KEY REFERENCES Activity(ID),
-    [Date] datetime NOT NULL,
+    [Date] date NOT NULL,
+	StartingTime time NOT NULL,
+	EndingTime time NOT NULL,
     [Description] nvarchar(30) NOT NULL,
-    SupervisorID int NOT NULL FOREIGN KEY REFERENCES Person(PersonID)
+    SupervisorID int NOT NULL FOREIGN KEY REFERENCES Supervisor(SupervisorID)
     --EventJunctionID int NOT NULL FOREIGN KEY REFERENCES EventJunction(ID)
 );
 
@@ -43,11 +43,18 @@ CREATE TABLE Sales(
     InputDate datetime NOT NULL
 );
 
+CREATE TABLE Supervisor(
+	SupervisorID int NOT NULL PRIMARY KEY IDENTITY(1,1),
+	TeacherID int NOT NULL FOREIGN KEY REFERENCES [Person](PersonID)
+	);
+
 CREATE TABLE Activity(
     ActivityID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     [Name] nvarchar(30) NOT NULL,
     [Date] datetime NOT NULL,
-    [Description] nvarchar(30) NOT NULL
+    [Description] nvarchar(30) NOT NULL,
+	NumberOfStudents int NOT NULL,
+	NumberOfAttendants int NOT NULL
     );
 
 CREATE TABLE Product(
@@ -65,13 +72,11 @@ CREATE TABLE [EventJunction](
     EventID int NOT NULL FOREIGN KEY REFERENCES [Event](EventID)
 );
 
-ALTER TABLE [Order]
-	ADD ProductID int;
+
 
 ALTER TABLE [Order]
-	ADD FOREIGN KEY (ProductID) REFERENCES Product(ProductID);
+	ADD ProductID int NOT NULL FOREIGN KEY REFERENCES Product(ProductID);
 
 ALTER TABLE [Event]
 	ADD CONSTRAINT ActivityID FOREIGN KEY (EventID) REFERENCES Activity(ActivityID),
         CONSTRAINT EventJunctionID FOREIGN KEY (EventID) REFERENCES EventJunction(EventJunctionID);
-
