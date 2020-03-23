@@ -37,6 +37,9 @@ namespace SomerenUI
                 pnl_Students.Hide();
                 pnl_teachers.Hide();
                 pnl_Rooms.Hide();
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
 
                 // show dashboard
                 pnl_Dashboard.Show();
@@ -46,7 +49,9 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
                 pnl_teachers.Hide();
                 pnl_Rooms.Hide();
 
@@ -77,7 +82,9 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
                 pnl_Students.Hide();
                 pnl_Rooms.Hide();
 
@@ -107,7 +114,9 @@ namespace SomerenUI
             {
                 // hide all other panels
                 pnl_Dashboard.Hide();
-                
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
                 pnl_Students.Hide();
                 pnl_teachers.Hide();
 
@@ -130,12 +139,90 @@ namespace SomerenUI
                 }
 
             }
+            else if (panelName == "Products")
+            {
+                // hide all other panels
+                pnl_Dashboard.Hide();
+                pnl_Rooms.Hide();
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
+
+                //show product panel
+                pnl_Products.Show();
+
+                SomerenLogic.Product_Service productService = new SomerenLogic.Product_Service();
+                List<Product> productList = productService.GetProducts();
+
+                // clear the listview before filling it again
+                listViewProducts.Items.Clear();
+
+                foreach (SomerenModel.Product p in productList)
+                {
+
+                    ListViewItem li = new ListViewItem(p.Id.ToString());
+                    li.SubItems.Add(p.Name);
+                    li.SubItems.Add(p.PriceIncl.ToString("€0.00"));
+                    li.SubItems.Add(p.Amount.ToString());
+                    li.SubItems.Add(p.Description);
+                    if (p.Amount < 10)
+                    {
+                        li.SubItems.Add("Voorraad bijna op");
+                    }
+                    else
+                    {
+                        li.SubItems.Add("Voldoende voorraad");
+                    }
+                    listViewProducts.Items.Add(li);
+                }
+            }
+            else if (panelName == "Orders")
+            {
+                //hide all other panels
+                pnl_Dashboard.Hide();
+                pnl_Rooms.Hide();
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Products.Hide();
+                pnl_Sales.Hide();
+
+                //show order panel
+                pnl_Orders.Show();
+                SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
+                List<Student> studentList = studService.GetStudents();
+
+                foreach (SomerenModel.Student s in studentList)
+                {
+                    combo_Students.Items.Add(s.StudentID + " - " + s.FirstName + " " + s.LastName);
+                }
+
+                //fill products
+                SomerenLogic.Product_Service productService = new SomerenLogic.Product_Service();
+                List<Product> productList = productService.GetProducts();
+
+                foreach (SomerenModel.Product p in productList)
+                {
+                    combo_Products.Items.Add(p.Id + " - " + p.Name);
+                }
+            }
+            else if (panelName == "Sales")
+            {
+                // hide all others
+                pnl_Dashboard.Hide();
+                pnl_Rooms.Hide();
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+
+                // show sales
+                pnl_Sales.Show();
+
+
+            }
         }
 
-        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           //
-        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -147,11 +234,6 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
-
-        private void img_Dashboard_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -176,14 +258,25 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
-        private void listViewteachers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("What happens in Someren, stays in Someren!");
+        }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Products");
+        }
+
+        private void ordersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Orders");
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Sales");
         }
     }
 }

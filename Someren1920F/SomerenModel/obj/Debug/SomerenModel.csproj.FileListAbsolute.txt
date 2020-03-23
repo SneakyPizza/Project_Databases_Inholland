@@ -24,3 +24,9 @@ D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenMo
 D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
 D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenModel\obj\Debug\SomerenModel.dll
 D:\Documents\GitHub\Periode 2\Project_Databases_Inholland\Someren1920F\SomerenModel\obj\Debug\SomerenModel.pdb
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenModel\bin\Debug\SomerenModel.dll
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenModel\bin\Debug\SomerenModel.pdb
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenModel\obj\Debug\SomerenModel.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenModel\obj\Debug\SomerenModel.dll
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenModel\obj\Debug\SomerenModel.pdb

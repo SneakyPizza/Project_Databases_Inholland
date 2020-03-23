@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="Base.cs" />
     <Compile Include="FillDatabase.cs" />
+    <Compile Include="LoginDAL.cs" />
+    <Compile Include="Order_DAO.cs" />
+    <Compile Include="Product_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room_DAO.cs" />
     <Compile Include="Student_DAO.cs" />
