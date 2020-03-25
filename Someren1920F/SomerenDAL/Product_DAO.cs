@@ -16,6 +16,7 @@ namespace SomerenDAL
     {
         public List<Product> Db_Get_All_Products()
         {
+            
             return ReadTables(ExecuteSelectQuery("GetAllProducts"));
         }
 
@@ -31,7 +32,7 @@ namespace SomerenDAL
                 int btw = (int)(dr["BTWPercentile"]);
                 int amount = (int)dr["Amount"];
                 string description = (String)(dr["Description"].ToString());
-                Product product = new Product(id, name, price, btw, description, amount);
+                Product product = new Product(id, name, price, btw, amount, description);
                 products.Add(product);
             }
             return products;

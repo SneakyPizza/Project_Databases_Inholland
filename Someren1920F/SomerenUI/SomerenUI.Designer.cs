@@ -132,7 +132,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(962, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(962, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -143,74 +143,74 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.dashboardToolStripMenuItem.Text = "Application";
             // 
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // dashbordToolStripMenuItem
             // 
             this.dashbordToolStripMenuItem.Name = "dashbordToolStripMenuItem";
-            this.dashbordToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.dashbordToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.dashbordToolStripMenuItem.Text = "Dashbord";
             this.dashbordToolStripMenuItem.Click += new System.EventHandler(this.dashbordToolStripMenuItem_Click);
             // 
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.studentsToolStripMenuItem.Text = "Students";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // teacherToolStripMenuItem
             // 
             this.teacherToolStripMenuItem.Name = "teacherToolStripMenuItem";
-            this.teacherToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.teacherToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.teacherToolStripMenuItem.Text = "Teacher";
             this.teacherToolStripMenuItem.Click += new System.EventHandler(this.teacherToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // productsToolStripMenuItem
             // 
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.productsToolStripMenuItem.Text = "Products";
             this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
             // 
             // ordersToolStripMenuItem
             // 
             this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
-            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.ordersToolStripMenuItem.Text = "Orders";
             this.ordersToolStripMenuItem.Click += new System.EventHandler(this.ordersToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.salesToolStripMenuItem.Text = "Sales";
             this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
             // 
@@ -239,7 +239,7 @@
             this.lbl_Dashboard.AutoSize = true;
             this.lbl_Dashboard.Location = new System.Drawing.Point(13, 13);
             this.lbl_Dashboard.Name = "lbl_Dashboard";
-            this.lbl_Dashboard.Size = new System.Drawing.Size(185, 13);
+            this.lbl_Dashboard.Size = new System.Drawing.Size(212, 15);
             this.lbl_Dashboard.TabIndex = 1;
             this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
             // 
@@ -260,7 +260,7 @@
             this.lbl_list.Location = new System.Drawing.Point(35, 62);
             this.lbl_list.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_list.Name = "lbl_list";
-            this.lbl_list.Size = new System.Drawing.Size(0, 13);
+            this.lbl_list.Size = new System.Drawing.Size(0, 15);
             this.lbl_list.TabIndex = 6;
             // 
             // listViewStudents
@@ -319,7 +319,7 @@
             this.lbl_Students.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Students.Location = new System.Drawing.Point(14, 10);
             this.lbl_Students.Name = "lbl_Students";
-            this.lbl_Students.Size = new System.Drawing.Size(107, 29);
+            this.lbl_Students.Size = new System.Drawing.Size(129, 33);
             this.lbl_Students.TabIndex = 3;
             this.lbl_Students.Text = "Students";
             // 
@@ -350,7 +350,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(10, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 29);
+            this.label1.Size = new System.Drawing.Size(137, 33);
             this.label1.TabIndex = 8;
             this.label1.Text = "Teachers";
             // 
@@ -360,7 +360,7 @@
             this.label2.Location = new System.Drawing.Point(35, 62);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 6;
             // 
             // listViewteachers
@@ -421,7 +421,7 @@
             this.lbl_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Rooms.Location = new System.Drawing.Point(10, 10);
             this.lbl_Rooms.Name = "lbl_Rooms";
-            this.lbl_Rooms.Size = new System.Drawing.Size(90, 29);
+            this.lbl_Rooms.Size = new System.Drawing.Size(108, 33);
             this.lbl_Rooms.TabIndex = 8;
             this.lbl_Rooms.Text = "Rooms";
             // 
@@ -431,7 +431,7 @@
             this.label4.Location = new System.Drawing.Point(35, 62);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 15);
             this.label4.TabIndex = 6;
             // 
             // listViewRooms
@@ -488,7 +488,7 @@
             this.label3.Location = new System.Drawing.Point(35, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 15);
             this.label3.TabIndex = 6;
             // 
             // listViewProducts
@@ -553,7 +553,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(14, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 29);
+            this.label5.Size = new System.Drawing.Size(130, 33);
             this.label5.TabIndex = 3;
             this.label5.Text = "Products";
             // 
@@ -590,7 +590,7 @@
             this.lbl_Afzet.AutoSize = true;
             this.lbl_Afzet.Location = new System.Drawing.Point(402, 61);
             this.lbl_Afzet.Name = "lbl_Afzet";
-            this.lbl_Afzet.Size = new System.Drawing.Size(0, 13);
+            this.lbl_Afzet.Size = new System.Drawing.Size(0, 15);
             this.lbl_Afzet.TabIndex = 10;
             // 
             // lbl_Omzet
@@ -598,7 +598,7 @@
             this.lbl_Omzet.AutoSize = true;
             this.lbl_Omzet.Location = new System.Drawing.Point(402, 95);
             this.lbl_Omzet.Name = "lbl_Omzet";
-            this.lbl_Omzet.Size = new System.Drawing.Size(0, 13);
+            this.lbl_Omzet.Size = new System.Drawing.Size(0, 15);
             this.lbl_Omzet.TabIndex = 9;
             // 
             // lbl_AantalKlanten
@@ -606,7 +606,7 @@
             this.lbl_AantalKlanten.AutoSize = true;
             this.lbl_AantalKlanten.Location = new System.Drawing.Point(399, 129);
             this.lbl_AantalKlanten.Name = "lbl_AantalKlanten";
-            this.lbl_AantalKlanten.Size = new System.Drawing.Size(0, 13);
+            this.lbl_AantalKlanten.Size = new System.Drawing.Size(0, 15);
             this.lbl_AantalKlanten.TabIndex = 8;
             // 
             // label10
@@ -614,7 +614,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(296, 130);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.Size = new System.Drawing.Size(87, 15);
             this.label10.TabIndex = 7;
             this.label10.Text = "Aantal klanten:";
             // 
@@ -623,7 +623,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(296, 96);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.Size = new System.Drawing.Size(46, 15);
             this.label9.TabIndex = 6;
             this.label9.Text = "Omzet:";
             // 
@@ -632,7 +632,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(296, 62);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.Size = new System.Drawing.Size(36, 15);
             this.label8.TabIndex = 5;
             this.label8.Text = "Afzet:";
             // 
@@ -658,7 +658,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(14, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 29);
+            this.label6.Size = new System.Drawing.Size(88, 33);
             this.label6.TabIndex = 3;
             this.label6.Text = "Sales";
             // 
@@ -720,7 +720,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(14, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 29);
+            this.label7.Size = new System.Drawing.Size(105, 33);
             this.label7.TabIndex = 3;
             this.label7.Text = "Orders";
             // 

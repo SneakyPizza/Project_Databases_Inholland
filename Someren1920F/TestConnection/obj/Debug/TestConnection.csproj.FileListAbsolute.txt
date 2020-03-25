@@ -23,3 +23,16 @@ D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1
 D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.csproj.CopyComplete
 D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.exe
 D:\School\Inholland\Haarlem\ProjectDatabase\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.pdb
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\TestConnection.exe.config
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\TestConnection.exe
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\TestConnection.pdb
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenDAL.dll
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenModel.dll
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenDAL.pdb
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenDAL.dll.config
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenModel.pdb
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.csprojAssemblyReference.cache
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.csproj.CopyComplete
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.exe
+D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.pdb
