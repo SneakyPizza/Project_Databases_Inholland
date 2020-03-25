@@ -10,14 +10,15 @@ namespace SomerenModel
     {
 
         private int _btw;
-        public Product(int id, string name, decimal price, int btwpercentile, string description = "", int amount = 0)
+        public Product(int id, string name, decimal price, int btwpercentile, int amount = 0, string description = "")
         {
             Id = id;
             Name = name;
             PriceExcl = price;
             _btw = btwpercentile;
-            Description = description;
             Amount = amount;
+            Description = description;
+            
         }
 
         public int Id { get; private set; }
