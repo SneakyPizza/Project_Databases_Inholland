@@ -27,11 +27,11 @@ namespace SomerenDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 int id = (int)dr["ProductID"];
-                string name = (String)(dr["Name"].ToString());
+                string name = (string)(dr["Name"].ToString());
                 decimal price = (decimal)(dr["Price"]);
                 int btw = (int)(dr["BTWPercentile"]);
                 int amount = (int)dr["Amount"];
-                string description = (String)(dr["Description"].ToString());
+                string description = (string)(dr["Description"].ToString());
                 Product product = new Product(id, name, price, btw, amount, description);
                 products.Add(product);
             }

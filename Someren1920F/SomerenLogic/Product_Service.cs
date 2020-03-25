@@ -23,7 +23,8 @@ namespace SomerenLogic
             {
                    // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
                    List<Product> product = new List<Product>();
-                   Product a = new Product(99, "Test", 99, 21, 99, "Something went wrong");
+                   Product a = new Product(99, "Test", 99, 21, 99, e.Message);
+                
                    product.Add(a);
                    return product;
                    throw;
