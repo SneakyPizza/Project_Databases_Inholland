@@ -684,6 +684,7 @@
             this.btn_Order.TabIndex = 6;
             this.btn_Order.Text = "Order";
             this.btn_Order.UseVisualStyleBackColor = true;
+            this.btn_Order.Click += new System.EventHandler(this.btn_Order_Click);
             // 
             // combo_Products
             // 

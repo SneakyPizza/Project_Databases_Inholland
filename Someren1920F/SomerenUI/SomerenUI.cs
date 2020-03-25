@@ -278,5 +278,33 @@ namespace SomerenUI
         {
             showPanel("Sales");
         }
+
+        private void btn_Order_Click(object sender, EventArgs e)
+        {
+            //set to default
+            combo_Students.Text = "Choose student";
+            combo_Products.Text = "Choose product";
+            //get studentid
+            string studentInput = combo_Students.SelectedItem.ToString();
+            string selectedStudent = studentInput.Substring(0, 2);
+            selectedStudent = selectedStudent.Replace(" ", String.Empty);
+            int selectedStudentID = int.Parse(selectedStudent);
+            //get productid
+            string productInput = combo_Products.SelectedItem.ToString();
+            string selectedProduct = productInput.Substring(0, 2);
+            selectedProduct = selectedProduct.Replace(" ", String.Empty);
+            int selectedProductID = int.Parse(selectedProduct);
+            //send to db
+            try
+            {
+                Order_DAO order_db = new Order_DAO();
+                order_db.Db_Send_Order(selectedProductID, selectedStudentID);
+                MessageBox.Show("Successfully placed order.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString(), "Error while placing order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

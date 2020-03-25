@@ -62,3 +62,14 @@ D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\De
 D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll.config
 D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.pdb
 D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.dll
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.pdb
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.dll
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.pdb
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.pdb
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.dll
+D:\Projects\Project_Databases_Inholland\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.pdb

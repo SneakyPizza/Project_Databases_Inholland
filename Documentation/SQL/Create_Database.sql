@@ -1,3 +1,5 @@
+CREATE DATABASE [ProjectDatabase];
+GO
 USE [ProjectDatabase];
 
 CREATE TABLE Person(
