@@ -40,6 +40,9 @@ namespace SomerenUI
                 pnl_Products.Hide();
                 pnl_Orders.Hide();
                 pnl_Sales.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
 
                 // show dashboard
                 pnl_Dashboard.Show();
@@ -54,6 +57,9 @@ namespace SomerenUI
                 pnl_Sales.Hide();
                 pnl_teachers.Hide();
                 pnl_Rooms.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
 
                 // show students
                 pnl_Students.Show();
@@ -87,6 +93,9 @@ namespace SomerenUI
                 pnl_Sales.Hide();
                 pnl_Students.Hide();
                 pnl_Rooms.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
 
                 // show teachers
                 pnl_teachers.Show();
@@ -119,6 +128,9 @@ namespace SomerenUI
                 pnl_Sales.Hide();
                 pnl_Students.Hide();
                 pnl_teachers.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
 
                 // show rooms
                 pnl_Rooms.Show();
@@ -148,6 +160,9 @@ namespace SomerenUI
                 pnl_teachers.Hide();
                 pnl_Orders.Hide();
                 pnl_Sales.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
 
                 //show product panel
                 pnl_Products.Show();
@@ -186,6 +201,9 @@ namespace SomerenUI
                 pnl_teachers.Hide();
                 pnl_Products.Hide();
                 pnl_Sales.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
 
                 //show order panel
                 pnl_Orders.Show();
@@ -215,11 +233,76 @@ namespace SomerenUI
                 pnl_teachers.Hide();
                 pnl_Products.Hide();
                 pnl_Orders.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
 
                 // show sales
                 pnl_Sales.Show();
 
 
+            }
+            else if (panelName == "Activities")
+            {
+                // hide all others
+                pnl_Dashboard.Hide();
+                pnl_Rooms.Hide();
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
+
+                // show activities
+                pnl_Activities.Show();
+
+                SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
+                List<Activity> activityList = activityService.GetActivities();
+
+                // clear the listview before filling it again
+                listViewActivities.Items.Clear();
+
+                foreach (SomerenModel.Activity a in activityList)
+                {
+
+                    ListViewItem li = new ListViewItem(a.ID.ToString());
+                    li.SubItems.Add(a.Name);
+                    li.SubItems.Add(a.Date.ToString());
+                    li.SubItems.Add(a.Description);
+                    listViewActivities.Items.Add(li);
+                }
+            }
+            else if (panelName == "AddActivity")
+            {
+                // hide all others
+                pnl_Dashboard.Hide();
+                pnl_Rooms.Hide();
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
+                pnl_Activities.Hide();
+                pnl_UpdateActivity.Hide();
+                //show add activity
+                pnl_AddActivity.Show();
+            }
+            else if (panelName == "UpdateActivity")
+            {
+                // hide all others
+                pnl_Dashboard.Hide();
+                pnl_Rooms.Hide();
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                //show update activity
+                pnl_UpdateActivity.Show();
             }
         }
 
@@ -281,30 +364,107 @@ namespace SomerenUI
 
         private void btn_Order_Click(object sender, EventArgs e)
         {
-            //set to default
-            combo_Students.Text = "Choose student";
-            combo_Products.Text = "Choose product";
-            //get studentid
-            string studentInput = combo_Students.SelectedItem.ToString();
-            string selectedStudent = studentInput.Substring(0, 2);
-            selectedStudent = selectedStudent.Replace(" ", String.Empty);
-            int selectedStudentID = int.Parse(selectedStudent);
-            //get productid
-            string productInput = combo_Products.SelectedItem.ToString();
-            string selectedProduct = productInput.Substring(0, 2);
-            selectedProduct = selectedProduct.Replace(" ", String.Empty);
-            int selectedProductID = int.Parse(selectedProduct);
-            //send to db
-            try
+            if (combo_Students.SelectedItem != null && combo_Products.SelectedItem != null)
             {
-                Order_DAO order_db = new Order_DAO();
-                order_db.Db_Send_Order(selectedProductID, selectedStudentID);
-                MessageBox.Show("Successfully placed order.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //set to default
+                combo_Students.Text = "Choose student";
+                combo_Products.Text = "Choose product";
+                //get studentid
+                string studentInput = combo_Students.SelectedItem.ToString();
+                string selectedStudent = studentInput.Substring(0, 2);
+                selectedStudent = selectedStudent.Replace(" ", String.Empty);
+                int selectedStudentID = int.Parse(selectedStudent);
+                //get productid
+                string productInput = combo_Products.SelectedItem.ToString();
+                string selectedProduct = productInput.Substring(0, 2);
+                selectedProduct = selectedProduct.Replace(" ", String.Empty);
+                int selectedProductID = int.Parse(selectedProduct);
+                //send to db
+                try
+                {
+                    Order_DAO order_db = new Order_DAO();
+                    order_db.Db_Send_Order(selectedProductID, selectedStudentID);
+                    MessageBox.Show("Successfully placed order.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.ToString(), "Error while placing order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception error)
+            else
             {
-                MessageBox.Show(error.ToString(), "Error while placing order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose student AND product", "Error while placing order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
+
+        }
+
+        private void ShowAllActivitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Activities");
+        }
+
+        private void AddActivityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("AddActivity");
+        }
+
+        private void Btn_EmptyActivity_Click(object sender, EventArgs e)
+        {
+            txt_ActivityName.Text = "";
+            txt_ActivityDescription.Text = "";
+        }
+
+        private void Btn_AddActivity_Click(object sender, EventArgs e)
+        {
+            if (txt_ActivityName.Text != "" && txt_ActivityDescription.Text != "")
+            {
+                //get input
+                string activityName = txt_ActivityName.Text;
+                string activityDescription = txt_ActivityDescription.Text;
+                //set time input to timespan and insert to the datetime
+                string hours = txt_ActivityTime.Text.Substring(0, 2);
+                string minutes = txt_ActivityTime.Text.Substring(3, 2);
+                string seconds = txt_ActivityTime.Text.Substring(6, 2);
+                int hour = int.Parse(hours);
+                int minute = int.Parse(minutes);
+                int second = int.Parse(seconds);
+                TimeSpan ts = new TimeSpan(hour, minute, second);
+                DateTime activityDatetime = (mnc_AddActivity.SelectionRange.Start + ts);
+                //send to db
+                try
+                {
+                    Activity_DAO activity_db = new Activity_DAO();
+                    activity_db.Db_Add_Activity(activityName, activityDatetime, activityDescription);
+                    MessageBox.Show("Successfully added activity.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.ToString(), "Error while adding activity", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                //set to default
+                txt_ActivityName.Text = "";
+                txt_ActivityDescription.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error while adding activity", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdateActivityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("UpdateActivity");
+        }
+
+        private void Pnl_Activities_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Pnl_UpdateActivity_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
