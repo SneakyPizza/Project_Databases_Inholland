@@ -47,6 +47,7 @@
             this.updateActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.picture_someren = new System.Windows.Forms.PictureBox();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
@@ -106,6 +107,13 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pnl_Activities = new System.Windows.Forms.Panel();
+            this.listViewActivities = new System.Windows.Forms.ListView();
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.pnl_UpdateActivity = new System.Windows.Forms.Panel();
             this.txt_UpdateActivityID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -121,13 +129,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.listViewActivities = new System.Windows.Forms.ListView();
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.pnl_AddActivity = new System.Windows.Forms.Panel();
             this.txt_ActivityTime = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -141,7 +142,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.pnl_DeleteActivity = new System.Windows.Forms.Panel();
+            this.txt_DeleteActivityID = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btn_DeleteActivity = new System.Windows.Forms.Button();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_someren)).BeginInit();
@@ -158,11 +164,13 @@
             this.pnl_Orders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.pnl_Activities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.pnl_UpdateActivity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.pnl_AddActivity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.pnl_DeleteActivity.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -300,6 +308,7 @@
             this.deleteActivityToolStripMenuItem.Name = "deleteActivityToolStripMenuItem";
             this.deleteActivityToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.deleteActivityToolStripMenuItem.Text = "Delete activity";
+            this.deleteActivityToolStripMenuItem.Click += new System.EventHandler(this.DeleteActivityToolStripMenuItem_Click);
             // 
             // pnl_Dashboard
             // 
@@ -310,6 +319,16 @@
             this.pnl_Dashboard.Name = "pnl_Dashboard";
             this.pnl_Dashboard.Size = new System.Drawing.Size(950, 466);
             this.pnl_Dashboard.TabIndex = 2;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Yi Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(7, 442);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(325, 12);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Made by Yornie Westink, Lars de Groot en Koen van Cromvoirt - INF1SB";
             // 
             // picture_someren
             // 
@@ -817,15 +836,68 @@
             this.pnl_Activities.Controls.Add(this.listViewActivities);
             this.pnl_Activities.Controls.Add(this.pictureBox7);
             this.pnl_Activities.Controls.Add(this.label11);
-            this.pnl_Activities.Location = new System.Drawing.Point(418, 72);
+            this.pnl_Activities.Location = new System.Drawing.Point(0, 18);
             this.pnl_Activities.Name = "pnl_Activities";
             this.pnl_Activities.Size = new System.Drawing.Size(938, 466);
             this.pnl_Activities.TabIndex = 14;
             this.pnl_Activities.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_Activities_Paint);
             // 
+            // listViewActivities
+            // 
+            this.listViewActivities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader14,
+            this.columnHeader18,
+            this.columnHeader19,
+            this.columnHeader20});
+            this.listViewActivities.HideSelection = false;
+            this.listViewActivities.Location = new System.Drawing.Point(19, 40);
+            this.listViewActivities.Name = "listViewActivities";
+            this.listViewActivities.Size = new System.Drawing.Size(781, 390);
+            this.listViewActivities.TabIndex = 4;
+            this.listViewActivities.UseCompatibleStateImageBehavior = false;
+            this.listViewActivities.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "ID";
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Name";
+            this.columnHeader18.Width = 168;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Date / Time";
+            this.columnHeader19.Width = 149;
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Description";
+            this.columnHeader20.Width = 400;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.InitialImage")));
+            this.pictureBox7.Location = new System.Drawing.Point(805, 10);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 29);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Activities";
+            // 
             // pnl_UpdateActivity
             // 
-            this.pnl_UpdateActivity.Controls.Add(this.pnl_Activities);
             this.pnl_UpdateActivity.Controls.Add(this.txt_UpdateActivityID);
             this.pnl_UpdateActivity.Controls.Add(this.label22);
             this.pnl_UpdateActivity.Controls.Add(this.txt_UpdateActivityTime);
@@ -840,7 +912,7 @@
             this.pnl_UpdateActivity.Controls.Add(this.label20);
             this.pnl_UpdateActivity.Controls.Add(this.pictureBox9);
             this.pnl_UpdateActivity.Controls.Add(this.label21);
-            this.pnl_UpdateActivity.Location = new System.Drawing.Point(16, 149);
+            this.pnl_UpdateActivity.Location = new System.Drawing.Point(0, 18);
             this.pnl_UpdateActivity.Name = "pnl_UpdateActivity";
             this.pnl_UpdateActivity.Size = new System.Drawing.Size(955, 466);
             this.pnl_UpdateActivity.TabIndex = 17;
@@ -895,6 +967,7 @@
             this.btn_UpdateActivity.TabIndex = 11;
             this.btn_UpdateActivity.Text = "Update";
             this.btn_UpdateActivity.UseVisualStyleBackColor = true;
+            this.btn_UpdateActivity.Click += new System.EventHandler(this.Btn_UpdateActivity_Click);
             // 
             // btn_CancelUpdate
             // 
@@ -906,6 +979,7 @@
             this.btn_CancelUpdate.TabIndex = 10;
             this.btn_CancelUpdate.Text = "Cancel";
             this.btn_CancelUpdate.UseVisualStyleBackColor = true;
+            this.btn_CancelUpdate.Click += new System.EventHandler(this.Btn_CancelUpdate_Click);
             // 
             // txt_UpdateActivityDescription
             // 
@@ -968,63 +1042,8 @@
             this.label21.TabIndex = 3;
             this.label21.Text = "Update activity";
             // 
-            // listViewActivities
-            // 
-            this.listViewActivities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader14,
-            this.columnHeader18,
-            this.columnHeader19,
-            this.columnHeader20});
-            this.listViewActivities.HideSelection = false;
-            this.listViewActivities.Location = new System.Drawing.Point(19, 40);
-            this.listViewActivities.Name = "listViewActivities";
-            this.listViewActivities.Size = new System.Drawing.Size(781, 390);
-            this.listViewActivities.TabIndex = 4;
-            this.listViewActivities.UseCompatibleStateImageBehavior = false;
-            this.listViewActivities.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "ID";
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "Name";
-            this.columnHeader18.Width = 168;
-            // 
-            // columnHeader19
-            // 
-            this.columnHeader19.Text = "Date / Time";
-            this.columnHeader19.Width = 149;
-            // 
-            // columnHeader20
-            // 
-            this.columnHeader20.Text = "Description";
-            this.columnHeader20.Width = 400;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::SomerenUI.Properties.Resources.someren;
-            this.pictureBox7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.InitialImage")));
-            this.pictureBox7.Location = new System.Drawing.Point(805, 10);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(130, 123);
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 29);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Activities";
-            // 
             // pnl_AddActivity
             // 
-            this.pnl_AddActivity.Controls.Add(this.pnl_UpdateActivity);
             this.pnl_AddActivity.Controls.Add(this.txt_ActivityTime);
             this.pnl_AddActivity.Controls.Add(this.label16);
             this.pnl_AddActivity.Controls.Add(this.mnc_AddActivity);
@@ -1150,21 +1169,73 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "Add activity";
             // 
-            // label23
+            // pnl_DeleteActivity
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Yi Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(7, 442);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(325, 12);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Made by Yornie Westink, Lars de Groot en Koen van Cromvoirt - INF1SB";
+            this.pnl_DeleteActivity.Controls.Add(this.txt_DeleteActivityID);
+            this.pnl_DeleteActivity.Controls.Add(this.label24);
+            this.pnl_DeleteActivity.Controls.Add(this.btn_DeleteActivity);
+            this.pnl_DeleteActivity.Controls.Add(this.pictureBox10);
+            this.pnl_DeleteActivity.Controls.Add(this.label29);
+            this.pnl_DeleteActivity.Location = new System.Drawing.Point(4, 19);
+            this.pnl_DeleteActivity.Name = "pnl_DeleteActivity";
+            this.pnl_DeleteActivity.Size = new System.Drawing.Size(955, 466);
+            this.pnl_DeleteActivity.TabIndex = 18;
+            // 
+            // txt_DeleteActivityID
+            // 
+            this.txt_DeleteActivityID.Location = new System.Drawing.Point(203, 57);
+            this.txt_DeleteActivityID.Name = "txt_DeleteActivityID";
+            this.txt_DeleteActivityID.Size = new System.Drawing.Size(28, 20);
+            this.txt_DeleteActivityID.TabIndex = 16;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(19, 62);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(18, 13);
+            this.label24.TabIndex = 15;
+            this.label24.Text = "ID";
+            // 
+            // btn_DeleteActivity
+            // 
+            this.btn_DeleteActivity.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_DeleteActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteActivity.Location = new System.Drawing.Point(22, 111);
+            this.btn_DeleteActivity.Name = "btn_DeleteActivity";
+            this.btn_DeleteActivity.Size = new System.Drawing.Size(209, 23);
+            this.btn_DeleteActivity.TabIndex = 11;
+            this.btn_DeleteActivity.Text = "Delete";
+            this.btn_DeleteActivity.UseVisualStyleBackColor = true;
+            this.btn_DeleteActivity.Click += new System.EventHandler(this.Btn_DeleteActivity_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox10.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.InitialImage")));
+            this.pictureBox10.Location = new System.Drawing.Point(805, 10);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox10.TabIndex = 0;
+            this.pictureBox10.TabStop = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(14, 10);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(161, 29);
+            this.label29.TabIndex = 3;
+            this.label29.Text = "Delete activity";
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_DeleteActivity);
+            this.Controls.Add(this.pnl_UpdateActivity);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnl_AddActivity);
             this.Controls.Add(this.pnl_teachers);
@@ -1174,6 +1245,7 @@
             this.Controls.Add(this.pnl_Products);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
+            this.Controls.Add(this.pnl_Activities);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
@@ -1205,13 +1277,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnl_Activities.ResumeLayout(false);
             this.pnl_Activities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.pnl_UpdateActivity.ResumeLayout(false);
             this.pnl_UpdateActivity.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.pnl_AddActivity.ResumeLayout(false);
             this.pnl_AddActivity.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.pnl_DeleteActivity.ResumeLayout(false);
+            this.pnl_DeleteActivity.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1331,6 +1406,12 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel pnl_DeleteActivity;
+        private System.Windows.Forms.TextBox txt_DeleteActivityID;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btn_DeleteActivity;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label label29;
     }
 }
 

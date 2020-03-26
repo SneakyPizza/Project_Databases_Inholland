@@ -26,6 +26,21 @@ namespace SomerenDAL
             SqlParameter[] sqlp = new SqlParameter[] { sqlParameter1, sqlParameter2, sqlParameter3 };
             ExecuteEditQuery("INSERT INTO [Activity] (ActivityID, Name, Date, Description) VALUES (82, @name, @dateTime, @description)", sqlp); //activityID kan weg als je database deze automatisch invult
         }
+        public void Db_Update_Activity(int id, string name, DateTime dateTime, string description)
+        {
+            SqlParameter sqlParameter1 = new SqlParameter("@id", id);
+            SqlParameter sqlParameter2 = new SqlParameter("@name", name);
+            SqlParameter sqlParameter3 = new SqlParameter("@dateTime", dateTime);
+            SqlParameter sqlParameter4 = new SqlParameter("@description", description);
+            SqlParameter[] sqlp = new SqlParameter[] { sqlParameter1, sqlParameter2, sqlParameter3, sqlParameter4 };
+            ExecuteEditQuery("UPDATE [Activity] SET Name = @name, Date = @dateTime, Description = @description WHERE ActivityID = @id", sqlp); 
+        }
+        public void Db_Delete_Activity(int id)
+        {
+            SqlParameter sqlParameter1 = new SqlParameter("@id", id);
+            SqlParameter[] sqlp = new SqlParameter[] { sqlParameter1 };
+            ExecuteEditQuery("DELETE FROM [Activity] WHERE ActivityID = @id", sqlp); 
+        }
         private List<Activity> ReadTables(DataTable dataTable)
         {
             List<Activity> activities = new List<Activity>();

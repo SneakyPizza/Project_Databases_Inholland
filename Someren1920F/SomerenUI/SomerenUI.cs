@@ -43,7 +43,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
-
+                pnl_DeleteActivity.Hide();
                 // show dashboard
                 pnl_Dashboard.Show();
                 
@@ -60,6 +60,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
 
                 // show students
                 pnl_Students.Show();
@@ -96,6 +97,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
 
                 // show teachers
                 pnl_teachers.Show();
@@ -131,6 +133,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
 
                 // show rooms
                 pnl_Rooms.Show();
@@ -163,6 +166,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
 
                 //show product panel
                 pnl_Products.Show();
@@ -204,6 +208,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
 
                 //show order panel
                 pnl_Orders.Show();
@@ -236,6 +241,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
 
                 // show sales
                 pnl_Sales.Show();
@@ -254,6 +260,7 @@ namespace SomerenUI
                 pnl_Sales.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
 
                 // show activities
                 pnl_Activities.Show();
@@ -286,6 +293,8 @@ namespace SomerenUI
                 pnl_Sales.Hide();
                 pnl_Activities.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
+
                 //show add activity
                 pnl_AddActivity.Show();
             }
@@ -301,8 +310,26 @@ namespace SomerenUI
                 pnl_Sales.Hide();
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
+                pnl_DeleteActivity.Hide();
+
                 //show update activity
                 pnl_UpdateActivity.Show();
+            }
+            else if (panelName == "DeleteActivity")
+            {
+                //hide all others
+                pnl_Dashboard.Hide();
+                pnl_Rooms.Hide();
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
+                //show delete activity
+                pnl_DeleteActivity.Show();
             }
         }
 
@@ -413,11 +440,12 @@ namespace SomerenUI
         {
             txt_ActivityName.Text = "";
             txt_ActivityDescription.Text = "";
+            txt_ActivityTime.Text = "";
         }
 
         private void Btn_AddActivity_Click(object sender, EventArgs e)
         {
-            if (txt_ActivityName.Text != "" && txt_ActivityDescription.Text != "")
+            if (txt_ActivityName.Text != "" && txt_ActivityDescription.Text != "" && mnc_AddActivity.SelectionRange.Start != null && txt_ActivityTime.Text != "")
             {
                 //get input
                 string activityName = txt_ActivityName.Text;
@@ -465,6 +493,82 @@ namespace SomerenUI
         private void Pnl_UpdateActivity_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Btn_CancelUpdate_Click(object sender, EventArgs e)
+        {
+            txt_UpdateActivityID.Text = "";
+            txt_updateActivityName.Text = "";
+            txt_UpdateActivityDescription.Text = "";
+            txt_UpdateActivityTime.Text = "";
+        }
+
+        private void Btn_UpdateActivity_Click(object sender, EventArgs e)
+        {
+            if (txt_UpdateActivityID.Text != "" && txt_updateActivityName.Text != "" && mnc_UpdateActivityDate.SelectionRange.Start != null && txt_UpdateActivityTime.Text != "" && txt_UpdateActivityDescription.Text != "")
+            {
+                //get input
+                string activityName = txt_updateActivityName.Text;
+                string activityDescription = txt_UpdateActivityDescription.Text;
+                int activityId = int.Parse(txt_UpdateActivityID.Text);
+                //set time input to timespan and insert to the datetime
+                string hours = txt_UpdateActivityTime.Text.Substring(0, 2);
+                string minutes = txt_UpdateActivityTime.Text.Substring(3, 2);
+                string seconds = txt_UpdateActivityTime.Text.Substring(6, 2);
+                int hour = int.Parse(hours);
+                int minute = int.Parse(minutes);
+                int second = int.Parse(seconds);
+                TimeSpan ts = new TimeSpan(hour, minute, second);
+                DateTime activityDatetime = (mnc_UpdateActivityDate.SelectionRange.Start + ts);
+                //send to db
+                try
+                {
+                    Activity_DAO activity_db = new Activity_DAO();
+                    activity_db.Db_Update_Activity(activityId, activityName, activityDatetime, activityDescription);
+                    MessageBox.Show("Successfully updated activity.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.ToString(), "Error while adding activity", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                //set to default
+                txt_UpdateActivityID.Text = "";
+                txt_updateActivityName.Text = "";
+                txt_UpdateActivityDescription.Text = "";
+                txt_UpdateActivityTime.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error while adding activity", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteActivityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("DeleteActivity");
+        }
+
+        private void Btn_DeleteActivity_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this activity?", "Delete Activity", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int activityId = int.Parse(txt_DeleteActivityID.Text);
+                try
+                {
+                    Activity_DAO activity_db = new Activity_DAO();
+                    activity_db.Db_Delete_Activity(activityId);
+                    MessageBox.Show("Successfully deleted activity.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.ToString(), "Error while deleted activity", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                txt_DeleteActivityID.Text = "";
+            }
         }
     }
 }
