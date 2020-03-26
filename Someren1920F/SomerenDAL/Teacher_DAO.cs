@@ -26,6 +26,7 @@ namespace SomerenDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
+                
                 int id = (int)dr["PersonID"];
                 string firstname = (String)(dr["Firstname"].ToString());
                 string lastname = (String)(dr["Lastname"].ToString());

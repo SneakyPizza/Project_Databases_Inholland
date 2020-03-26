@@ -68,6 +68,6 @@ CREATE TABLE [EventJunction](
 ALTER TABLE [Order]
 	ADD ProductID int NOT NULL FOREIGN KEY REFERENCES Product(ProductID);
 
-ALTER TABLE [Event]
-	ADD CONSTRAINT ActivityID FOREIGN KEY (EventID) REFERENCES Activity(ActivityID),
-        CONSTRAINT EventJunctionID FOREIGN KEY (EventID) REFERENCES EventJunction(EventJunctionID);
+	ALTER TABLE [Event]
+	ADD  ActivityID int NOT NULL FOREIGN KEY REFERENCES Activity(ActivityID),
+         EventJunctionID int NOT NULL  FOREIGN KEY REFERENCES EventJunction(EventJunctionID);
