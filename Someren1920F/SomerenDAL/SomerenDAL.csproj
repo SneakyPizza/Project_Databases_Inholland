@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Activity_DAO.cs" />
     <Compile Include="Base.cs" />
+    <Compile Include="Event_DAO.cs" />
     <Compile Include="Supervisor_DAO.cs" />
     <Compile Include="FillDatabase.cs" />
     <Compile Include="LoginDAL.cs" />

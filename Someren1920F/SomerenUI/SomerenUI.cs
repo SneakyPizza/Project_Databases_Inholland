@@ -367,11 +367,11 @@ namespace SomerenUI
                 SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
                 List<Activity> activityList = activityService.GetActivities();
 
-                comboBoxActivity.Items.Clear();
+                comboBoxEvent.Items.Clear();
 
                 foreach (SomerenModel.Activity a in activityList)
                 {
-                    comboBoxActivity.Items.Add(a.ID + " - " + a.Name);
+                    comboBoxEvent.Items.Add(a.ID + " - " + a.Name);
                 }
 
             }
@@ -634,7 +634,7 @@ namespace SomerenUI
             int selectedActivityID = int.Parse(selectedActivity);
 
             //send new supervisor
-            /*try
+            try
             {
                 Supervisor_DAO supervisor_db = new Supervisor_DAO();
                 supervisor_db.Db_Send_NewSupervisor(selectedTeacherID, selectedActivityID);
@@ -644,7 +644,7 @@ namespace SomerenUI
             {
                 MessageBox.Show(error.ToString(), "Error while placing order", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
+            
         }
 
         private void btn_deletesupervisor_Click(object sender, EventArgs e)

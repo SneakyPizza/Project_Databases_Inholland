@@ -153,7 +153,7 @@
             this.btn_deletesupervisor = new System.Windows.Forms.Button();
             this.comboBoxSupervisor = new System.Windows.Forms.ComboBox();
             this.btn_newsupervisor = new System.Windows.Forms.Button();
-            this.comboBoxActivity = new System.Windows.Forms.ComboBox();
+            this.comboBoxEvent = new System.Windows.Forms.ComboBox();
             this.comboBoxTeacher = new System.Windows.Forms.ComboBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.lbl_supervisors = new System.Windows.Forms.Label();
@@ -1258,7 +1258,7 @@
             this.pnl_supervisors.Controls.Add(this.btn_deletesupervisor);
             this.pnl_supervisors.Controls.Add(this.comboBoxSupervisor);
             this.pnl_supervisors.Controls.Add(this.btn_newsupervisor);
-            this.pnl_supervisors.Controls.Add(this.comboBoxActivity);
+            this.pnl_supervisors.Controls.Add(this.comboBoxEvent);
             this.pnl_supervisors.Controls.Add(this.comboBoxTeacher);
             this.pnl_supervisors.Controls.Add(this.pictureBox11);
             this.pnl_supervisors.Controls.Add(this.lbl_supervisors);
@@ -1298,14 +1298,14 @@
             this.btn_newsupervisor.UseVisualStyleBackColor = true;
             this.btn_newsupervisor.Click += new System.EventHandler(this.btn_newsupervisor_Click);
             // 
-            // comboBoxActivity
+            // comboBoxEvent
             // 
-            this.comboBoxActivity.FormattingEnabled = true;
-            this.comboBoxActivity.Location = new System.Drawing.Point(10, 333);
-            this.comboBoxActivity.Name = "comboBoxActivity";
-            this.comboBoxActivity.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxActivity.TabIndex = 11;
-            this.comboBoxActivity.Text = "Select activity";
+            this.comboBoxEvent.FormattingEnabled = true;
+            this.comboBoxEvent.Location = new System.Drawing.Point(10, 333);
+            this.comboBoxEvent.Name = "comboBoxEvent";
+            this.comboBoxEvent.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEvent.TabIndex = 11;
+            this.comboBoxEvent.Text = "Select event";
             // 
             // comboBoxTeacher
             // 
@@ -1571,7 +1571,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.ComboBox comboBoxTeacher;
-        private System.Windows.Forms.ComboBox comboBoxActivity;
+        private System.Windows.Forms.ComboBox comboBoxEvent;
         private System.Windows.Forms.Button btn_deletesupervisor;
         private System.Windows.Forms.ComboBox comboBoxSupervisor;
         private System.Windows.Forms.Button btn_newsupervisor;
