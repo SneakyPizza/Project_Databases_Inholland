@@ -11,7 +11,7 @@ USE [ProjectDatabase];
 GO
 CREATE PROCEDURE dbo.GetAllPersonInfo
 	-- Add the parameters for the stored procedure here
-	@RoleId bit = 0
+	@RoleId int = 0
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from

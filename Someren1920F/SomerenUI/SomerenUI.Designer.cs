@@ -153,7 +153,6 @@
             this.btn_deletesupervisor = new System.Windows.Forms.Button();
             this.comboBoxSupervisor = new System.Windows.Forms.ComboBox();
             this.btn_newsupervisor = new System.Windows.Forms.Button();
-            this.comboBoxEvent = new System.Windows.Forms.ComboBox();
             this.comboBoxTeacher = new System.Windows.Forms.ComboBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.lbl_supervisors = new System.Windows.Forms.Label();
@@ -864,7 +863,6 @@
             this.pnl_Activities.Name = "pnl_Activities";
             this.pnl_Activities.Size = new System.Drawing.Size(938, 466);
             this.pnl_Activities.TabIndex = 14;
-            this.pnl_Activities.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_Activities_Paint);
             // 
             // listViewActivities
             // 
@@ -940,7 +938,6 @@
             this.pnl_UpdateActivity.Name = "pnl_UpdateActivity";
             this.pnl_UpdateActivity.Size = new System.Drawing.Size(955, 466);
             this.pnl_UpdateActivity.TabIndex = 17;
-            this.pnl_UpdateActivity.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_UpdateActivity_Paint);
             // 
             // txt_UpdateActivityID
             // 
@@ -1258,7 +1255,6 @@
             this.pnl_supervisors.Controls.Add(this.btn_deletesupervisor);
             this.pnl_supervisors.Controls.Add(this.comboBoxSupervisor);
             this.pnl_supervisors.Controls.Add(this.btn_newsupervisor);
-            this.pnl_supervisors.Controls.Add(this.comboBoxEvent);
             this.pnl_supervisors.Controls.Add(this.comboBoxTeacher);
             this.pnl_supervisors.Controls.Add(this.pictureBox11);
             this.pnl_supervisors.Controls.Add(this.lbl_supervisors);
@@ -1299,19 +1295,10 @@
             this.btn_newsupervisor.UseVisualStyleBackColor = true;
             this.btn_newsupervisor.Click += new System.EventHandler(this.btn_newsupervisor_Click);
             // 
-            // comboBoxEvent
-            // 
-            this.comboBoxEvent.FormattingEnabled = true;
-            this.comboBoxEvent.Location = new System.Drawing.Point(10, 333);
-            this.comboBoxEvent.Name = "comboBoxEvent";
-            this.comboBoxEvent.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEvent.TabIndex = 11;
-            this.comboBoxEvent.Text = "Select event";
-            // 
             // comboBoxTeacher
             // 
             this.comboBoxTeacher.FormattingEnabled = true;
-            this.comboBoxTeacher.Location = new System.Drawing.Point(11, 293);
+            this.comboBoxTeacher.Location = new System.Drawing.Point(11, 335);
             this.comboBoxTeacher.Name = "comboBoxTeacher";
             this.comboBoxTeacher.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTeacher.TabIndex = 10;
@@ -1353,7 +1340,6 @@
             this.columnHeader22,
             this.columnHeader23});
             this.listViewSupervisors.GridLines = true;
-            this.listViewSupervisors.HideSelection = false;
             this.listViewSupervisors.Location = new System.Drawing.Point(11, 40);
             this.listViewSupervisors.Name = "listViewSupervisors";
             this.listViewSupervisors.Size = new System.Drawing.Size(766, 226);
@@ -1363,17 +1349,17 @@
             // 
             // columnHeader21
             // 
-            this.columnHeader21.Text = "ID";
+            this.columnHeader21.Text = "PersonID";
             this.columnHeader21.Width = 87;
             // 
             // columnHeader22
             // 
-            this.columnHeader22.Text = "TeacherID";
+            this.columnHeader22.Text = "Firstname";
             this.columnHeader22.Width = 102;
             // 
             // columnHeader23
             // 
-            this.columnHeader23.Text = "ActivityID";
+            this.columnHeader23.Text = "Lastname";
             this.columnHeader23.Width = 500;
             // 
             // SomerenUI
@@ -1572,7 +1558,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.ComboBox comboBoxTeacher;
-        private System.Windows.Forms.ComboBox comboBoxEvent;
         private System.Windows.Forms.Button btn_deletesupervisor;
         private System.Windows.Forms.ComboBox comboBoxSupervisor;
         private System.Windows.Forms.Button btn_newsupervisor;
