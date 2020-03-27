@@ -31,5 +31,22 @@ namespace SomerenLogic
                 //throw new Exception("Someren couldn't connect to the database");
             }
         }
+
+        public List<Event> GetEventsBetween(DateTime begindate, DateTime enddate)
+        {
+            try
+            {
+                return event_db.Db_GetAllEventsBetween(begindate, enddate);
+            }
+            catch (Exception e)
+            {
+                List<Event> eventt = new List<Event>();
+                Event a = new Event(99, DateTime.Now, e.Source + " " + e.Message, 1, 1, 1);
+
+                eventt.Add(a);
+                return eventt;
+                throw;
+            }
+        }
     }
 }

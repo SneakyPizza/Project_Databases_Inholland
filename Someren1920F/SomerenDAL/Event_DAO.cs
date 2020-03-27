@@ -25,7 +25,7 @@ namespace SomerenDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                int id = (int)dr["ProductID"];
+                int id = (int)dr["EventID"];
                 DateTime date = (DateTime)(dr["Date"]);
                 string description = (string)(dr["Description"].ToString());
                 int supervisorId = (int)dr["SuperVisorID"];
@@ -35,6 +35,11 @@ namespace SomerenDAL
                 events.Add(eventt);
             }
             return events;
+        }
+
+        public List<Event> Db_GetAllEventsBetween(DateTime begindate, DateTime enddate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

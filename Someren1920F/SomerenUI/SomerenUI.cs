@@ -628,7 +628,7 @@ namespace SomerenUI
             selectedTeacher = selectedTeacher.Replace(" ", String.Empty);
             int selectedTeacherID = int.Parse(selectedTeacher);
             //get activityid
-            string activityInput = comboBoxSupervisor.SelectedItem.ToString();
+            string activityInput = comboBoxEvent.SelectedItem.ToString();
             string selectedActivity = activityInput.Substring(0, 2);
             selectedActivity = selectedActivity.Replace(" ", String.Empty);
             int selectedActivityID = int.Parse(selectedActivity);

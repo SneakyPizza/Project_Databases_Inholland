@@ -8,7 +8,7 @@ CREATE TABLE Person(
     Lastname nvarchar(20) NOT NULL,
     Email nvarchar(40) NOT NULL,
     Phonenumber nvarchar(13) NOT NULL,
-    [Role] bit NOT NULL
+    [Role] int NOT NULL
 );
 
 CREATE TABLE [Order](
@@ -16,7 +16,7 @@ CREATE TABLE [Order](
     PersonID int NOT NULL FOREIGN KEY REFERENCES Person(PersonID),
     Amount int NOT NULL,
     --ProductID int NOT NULL FOREIGN KEY REFERENCES Product(ID),
-    [Timestamp] nvarchar(10) NOT NULL,
+    [Timestamp] datetime NOT NULL,
 );
 
 CREATE TABLE Room (

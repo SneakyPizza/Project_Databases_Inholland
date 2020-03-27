@@ -41,7 +41,7 @@ namespace SomerenDAL
             SqlParameter sqlParameter1 = new SqlParameter("@Productid", TeacherId);
             SqlParameter sqlParameter2 = new SqlParameter("@Personid", Activityid);
             SqlParameter[] sqlp = new SqlParameter[] { sqlParameter1, sqlParameter2};
-            ExecuteEditQuery("INSERT INTO [ActivityJunction] (, Amount, Timestamp, ProductID) VALUES ( @Personid, @Amount, @Timestamp, @Productid)", sqlp); //orderID kan weg als je database deze automatisch invult
+            ExecuteEditQuery("INSERT INTO [ActivityJunction] ( Amount, Timestamp, ProductID) VALUES ( @Personid, @Amount, @Timestamp, @Productid)", sqlp); //orderID kan weg als je database deze automatisch invult
         }
         
     }
