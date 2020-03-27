@@ -58,6 +58,7 @@ namespace SomerenDAL
                 command.CommandText = query;
                 command.Parameters.AddRange(sqlParameters);
                 adapter.InsertCommand = command;
+                command.CommandType = CommandType.StoredProcedure;
                 command.ExecuteNonQuery();
             }
             catch (SqlException e)

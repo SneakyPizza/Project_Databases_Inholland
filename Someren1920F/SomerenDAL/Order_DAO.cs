@@ -21,7 +21,7 @@ namespace SomerenDAL
             SqlParameter sqlParameter3 = new SqlParameter("@Amount", 1);
             SqlParameter sqlParameter4 = new SqlParameter("@Timestamp", DateTime.Now);
             SqlParameter[] sqlp = new SqlParameter[] { sqlParameter1, sqlParameter2, sqlParameter3, sqlParameter4 };
-            ExecuteEditQuery("INSERT INTO [Order] (PersonID, Amount, Timestamp, ProductID) VALUES ( @Personid, @Amount, @Timestamp, @Productid)", sqlp); //orderID kan weg als je database deze automatisch invult
+            ExecuteEditQuery("InsertOrder", sqlp); 
         }
         public List<Order> ReadOrders(DataTable dt)
         {
@@ -56,9 +56,7 @@ namespace SomerenDAL
             SqlParameter p1 = new SqlParameter("StartDate", t1);
             SqlParameter p2 = new SqlParameter("EndDate", t2);
             SqlParameter[] sqlp = new SqlParameter[] { p1, p2 };
-            return ReadOrders(ExecuteSelectQuery("GetOrders", sqlp));
+            return ReadOrders(ExecuteSelectQuery("GetOrdersBetween", sqlp));
         }
-
-
     }
 }
