@@ -12,14 +12,12 @@ using System.Data.SqlTypes;
 
 namespace SomerenDAL
 {
-    public class Supervisor_DAO
+    public class Supervisor_DAO : Base
     {
 
         public List<Supervisor> Db_Get_All_Supervisors()
         {
-            SqlParameter sqlParameter = new SqlParameter("@RoleID", 0);
-            SqlParameter[] sqlp = new SqlParameter[] { sqlParameter };
-            return ReadTables(ExecuteSelectQuery("GetAllPersonInfo", sqlp));
+            return ReadTables(ExecuteSelectQuery("GetAllPersonInfo"));
         }
 
         private List<Supervisor> ReadTables(DataTable dataTable)
@@ -37,7 +35,7 @@ namespace SomerenDAL
             return supervisors;
         }
 
-        /*
+        
         public void Db_Send_NewSupervisor(int TeacherId, int Activityid)
         {
             SqlParameter sqlParameter1 = new SqlParameter("@Productid", TeacherId);
@@ -45,6 +43,6 @@ namespace SomerenDAL
             SqlParameter[] sqlp = new SqlParameter[] { sqlParameter1, sqlParameter2};
             ExecuteEditQuery("INSERT INTO [ActivityJunction] (, Amount, Timestamp, ProductID) VALUES ( @Personid, @Amount, @Timestamp, @Productid)", sqlp); //orderID kan weg als je database deze automatisch invult
         }
-        */
+        
     }
 }

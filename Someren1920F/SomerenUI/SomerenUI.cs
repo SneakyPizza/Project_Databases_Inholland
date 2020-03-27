@@ -364,14 +364,14 @@ namespace SomerenUI
                 }
 
                 //Fill the Activity combobox
-                SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
-                List<Activity> activityList = activityService.GetActivities();
+                SomerenLogic.Event_Service eventService = new SomerenLogic.Event_Service();
+                List<Event> eventList = eventService.GetEvents();
 
                 comboBoxEvent.Items.Clear();
 
-                foreach (SomerenModel.Activity a in activityList)
+                foreach (SomerenModel.Event e in eventList)
                 {
-                    comboBoxEvent.Items.Add(a.ID + " - " + a.Name);
+                    comboBoxEvent.Items.Add(e.ID + " - " + e.Description);
                 }
 
             }
@@ -648,6 +648,11 @@ namespace SomerenUI
         }
 
         private void btn_deletesupervisor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_supervisors_Paint(object sender, PaintEventArgs e)
         {
 
         }

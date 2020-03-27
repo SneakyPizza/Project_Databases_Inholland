@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SomerenModel
 {
-    class Event
+    public class Event
     {
         public Event(int id, DateTime date, string description, int supervisorId, int activityId, int eventJunctionId)
         {

@@ -12,11 +12,10 @@ using System.Data.SqlTypes;
 
 namespace SomerenDAL
 {
-    public class Event_DAO
+    public class Event_DAO : Base
     {
-        public List<Event> Db_Get_All_Event()
+        public List<Event> Db_GetAllEvents()
         {
-
             return ReadTables(ExecuteSelectQuery("GetAllEvents"));
         }
 
@@ -27,14 +26,16 @@ namespace SomerenDAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 int id = (int)dr["ProductID"];
-                string name = (string)(dr["Name"].ToString());
-                decimal price = (decimal)(dr["Price"]);
-                int btw = (int)(dr["BTWPercentile"]);
-                int amount = (int)dr["Amount"];
+                DateTime date = (DateTime)(dr["Date"]);
                 string description = (string)(dr["Description"].ToString());
-                Event eventt = new Event(id, name, price, btw, amount, description);
+                int supervisorId = (int)dr["SuperVisorID"];
+                int activityId = (int)dr["ActivityID"];
+                int eventJunctionId = (int)dr["EventJunctionID"];
+                Event eventt = new Event(id, date, description, supervisorId, activityId, eventJunctionId);
                 events.Add(eventt);
             }
             return events;
         }
+    }
 }
+

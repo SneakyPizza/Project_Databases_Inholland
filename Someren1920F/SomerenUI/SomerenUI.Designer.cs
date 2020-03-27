@@ -1268,6 +1268,7 @@
             this.pnl_supervisors.Name = "pnl_supervisors";
             this.pnl_supervisors.Size = new System.Drawing.Size(938, 466);
             this.pnl_supervisors.TabIndex = 19;
+            this.pnl_supervisors.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_supervisors_Paint);
             // 
             // btn_deletesupervisor
             // 
