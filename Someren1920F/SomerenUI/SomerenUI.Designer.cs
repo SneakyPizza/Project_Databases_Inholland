@@ -46,6 +46,7 @@
             this.addActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.picture_someren = new System.Windows.Forms.PictureBox();
@@ -148,6 +149,19 @@
             this.btn_DeleteActivity = new System.Windows.Forms.Button();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.pnl_supervisors = new System.Windows.Forms.Panel();
+            this.btn_deletesupervisor = new System.Windows.Forms.Button();
+            this.comboBoxSupervisor = new System.Windows.Forms.ComboBox();
+            this.btn_newsupervisor = new System.Windows.Forms.Button();
+            this.comboBoxEvent = new System.Windows.Forms.ComboBox();
+            this.comboBoxTeacher = new System.Windows.Forms.ComboBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.lbl_supervisors = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.listViewSupervisors = new System.Windows.Forms.ListView();
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_someren)).BeginInit();
@@ -171,6 +185,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.pnl_DeleteActivity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.pnl_supervisors.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -185,7 +201,8 @@
             this.productsToolStripMenuItem,
             this.ordersToolStripMenuItem,
             this.salesToolStripMenuItem,
-            this.activitiesToolStripMenuItem});
+            this.activitiesToolStripMenuItem,
+            this.supervisorsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -309,6 +326,13 @@
             this.deleteActivityToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.deleteActivityToolStripMenuItem.Text = "Delete activity";
             this.deleteActivityToolStripMenuItem.Click += new System.EventHandler(this.DeleteActivityToolStripMenuItem_Click);
+            // 
+            // supervisorsToolStripMenuItem
+            // 
+            this.supervisorsToolStripMenuItem.Name = "supervisorsToolStripMenuItem";
+            this.supervisorsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.supervisorsToolStripMenuItem.Text = "Supervisors";
+            this.supervisorsToolStripMenuItem.Click += new System.EventHandler(this.supervisorsToolStripMenuItem_Click);
             // 
             // pnl_Dashboard
             // 
@@ -1229,11 +1253,135 @@
             this.label29.TabIndex = 3;
             this.label29.Text = "Delete activity";
             // 
+            // pnl_supervisors
+            // 
+            this.pnl_supervisors.Controls.Add(this.btn_deletesupervisor);
+            this.pnl_supervisors.Controls.Add(this.comboBoxSupervisor);
+            this.pnl_supervisors.Controls.Add(this.btn_newsupervisor);
+            this.pnl_supervisors.Controls.Add(this.comboBoxEvent);
+            this.pnl_supervisors.Controls.Add(this.comboBoxTeacher);
+            this.pnl_supervisors.Controls.Add(this.pictureBox11);
+            this.pnl_supervisors.Controls.Add(this.lbl_supervisors);
+            this.pnl_supervisors.Controls.Add(this.label42);
+            this.pnl_supervisors.Controls.Add(this.listViewSupervisors);
+            this.pnl_supervisors.Location = new System.Drawing.Point(3, 12);
+            this.pnl_supervisors.Name = "pnl_supervisors";
+            this.pnl_supervisors.Size = new System.Drawing.Size(938, 466);
+            this.pnl_supervisors.TabIndex = 19;
+            this.pnl_supervisors.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_supervisors_Paint);
+            // 
+            // btn_deletesupervisor
+            // 
+            this.btn_deletesupervisor.Location = new System.Drawing.Point(285, 379);
+            this.btn_deletesupervisor.Name = "btn_deletesupervisor";
+            this.btn_deletesupervisor.Size = new System.Drawing.Size(121, 23);
+            this.btn_deletesupervisor.TabIndex = 14;
+            this.btn_deletesupervisor.Text = "Delete supervisor";
+            this.btn_deletesupervisor.UseVisualStyleBackColor = true;
+            this.btn_deletesupervisor.Click += new System.EventHandler(this.btn_deletesupervisor_Click);
+            // 
+            // comboBoxSupervisor
+            // 
+            this.comboBoxSupervisor.FormattingEnabled = true;
+            this.comboBoxSupervisor.Location = new System.Drawing.Point(285, 336);
+            this.comboBoxSupervisor.Name = "comboBoxSupervisor";
+            this.comboBoxSupervisor.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSupervisor.TabIndex = 13;
+            this.comboBoxSupervisor.Text = "Select supervisor";
+            // 
+            // btn_newsupervisor
+            // 
+            this.btn_newsupervisor.Location = new System.Drawing.Point(11, 379);
+            this.btn_newsupervisor.Name = "btn_newsupervisor";
+            this.btn_newsupervisor.Size = new System.Drawing.Size(121, 23);
+            this.btn_newsupervisor.TabIndex = 12;
+            this.btn_newsupervisor.Text = "Add new supervisor";
+            this.btn_newsupervisor.UseVisualStyleBackColor = true;
+            this.btn_newsupervisor.Click += new System.EventHandler(this.btn_newsupervisor_Click);
+            // 
+            // comboBoxEvent
+            // 
+            this.comboBoxEvent.FormattingEnabled = true;
+            this.comboBoxEvent.Location = new System.Drawing.Point(10, 333);
+            this.comboBoxEvent.Name = "comboBoxEvent";
+            this.comboBoxEvent.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEvent.TabIndex = 11;
+            this.comboBoxEvent.Text = "Select event";
+            // 
+            // comboBoxTeacher
+            // 
+            this.comboBoxTeacher.FormattingEnabled = true;
+            this.comboBoxTeacher.Location = new System.Drawing.Point(11, 293);
+            this.comboBoxTeacher.Name = "comboBoxTeacher";
+            this.comboBoxTeacher.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTeacher.TabIndex = 10;
+            this.comboBoxTeacher.Text = "Select teacher";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox11.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.InitialImage")));
+            this.pictureBox11.Location = new System.Drawing.Point(806, 10);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox11.TabIndex = 9;
+            this.pictureBox11.TabStop = false;
+            // 
+            // lbl_supervisors
+            // 
+            this.lbl_supervisors.AutoSize = true;
+            this.lbl_supervisors.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_supervisors.Location = new System.Drawing.Point(10, 10);
+            this.lbl_supervisors.Name = "lbl_supervisors";
+            this.lbl_supervisors.Size = new System.Drawing.Size(141, 29);
+            this.lbl_supervisors.TabIndex = 8;
+            this.lbl_supervisors.Text = "Supervisors\r\n";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(35, 62);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(0, 13);
+            this.label42.TabIndex = 6;
+            // 
+            // listViewSupervisors
+            // 
+            this.listViewSupervisors.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
+            this.listViewSupervisors.GridLines = true;
+            this.listViewSupervisors.HideSelection = false;
+            this.listViewSupervisors.Location = new System.Drawing.Point(11, 40);
+            this.listViewSupervisors.Name = "listViewSupervisors";
+            this.listViewSupervisors.Size = new System.Drawing.Size(766, 226);
+            this.listViewSupervisors.TabIndex = 5;
+            this.listViewSupervisors.UseCompatibleStateImageBehavior = false;
+            this.listViewSupervisors.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "ID";
+            this.columnHeader21.Width = 87;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "TeacherID";
+            this.columnHeader22.Width = 102;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "ActivityID";
+            this.columnHeader23.Width = 500;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_supervisors);
             this.Controls.Add(this.pnl_DeleteActivity);
             this.Controls.Add(this.pnl_UpdateActivity);
             this.Controls.Add(this.menuStrip1);
@@ -1287,6 +1435,9 @@
             this.pnl_DeleteActivity.ResumeLayout(false);
             this.pnl_DeleteActivity.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.pnl_supervisors.ResumeLayout(false);
+            this.pnl_supervisors.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1412,6 +1563,20 @@
         private System.Windows.Forms.Button btn_DeleteActivity;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Panel pnl_supervisors;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Label lbl_supervisors;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.ListView listViewSupervisors;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ComboBox comboBoxTeacher;
+        private System.Windows.Forms.ComboBox comboBoxEvent;
+        private System.Windows.Forms.Button btn_deletesupervisor;
+        private System.Windows.Forms.ComboBox comboBoxSupervisor;
+        private System.Windows.Forms.Button btn_newsupervisor;
+        private System.Windows.Forms.ToolStripMenuItem supervisorsToolStripMenuItem;
     }
 }
 

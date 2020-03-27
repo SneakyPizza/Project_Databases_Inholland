@@ -8,19 +8,22 @@ namespace SomerenModel
 {
     public class Event
     {
-        public Event(int eventId, DateTime eventDate, string eventDescription, int supervisorId, string activityName)
+        public Event(int id, DateTime date, string description, int supervisorId, int activityId, int eventJunctionId)
         {
-            EventId = eventId;
-            EventDate = eventDate;
-            EventDescription = eventDescription;
-            EventSuperVisorId = supervisorId;
-            ActivityName = activityName;
+            ID = id;
+            Date = date;
+            Description = description;
+            SupervisorId = supervisorId;
+            ActivityId = activityId;
+            EventJunctionId = eventJunctionId;
+
         }
 
-        public int EventId { get; private set; }
-        public DateTime EventDate { get; private set; }
-        public string EventDescription { get; private set; }
-        public int  EventSuperVisorId { get; private set; }
-        public string ActivityName { get; private set; }
+        public int ID { get; set; }
+        public DateTime Date { get; set; }
+        public string Description { get; set; }
+        public int SupervisorId { get; set; }
+        public int ActivityId { get; set; }
+        public int EventJunctionId { get; set; }
     }
 }

@@ -44,6 +44,7 @@ namespace SomerenUI
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
+                pnl_supervisors.Hide();
                 // show dashboard
                 pnl_Dashboard.Show();
                 
@@ -61,7 +62,7 @@ namespace SomerenUI
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
-
+                pnl_supervisors.Hide();
                 // show students
                 pnl_Students.Show();
 
@@ -98,7 +99,7 @@ namespace SomerenUI
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
-
+                pnl_supervisors.Hide();
                 // show teachers
                 pnl_teachers.Show();
 
@@ -134,7 +135,7 @@ namespace SomerenUI
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
-
+                pnl_supervisors.Hide();
                 // show rooms
                 pnl_Rooms.Show();
 
@@ -167,7 +168,7 @@ namespace SomerenUI
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
-
+                pnl_supervisors.Hide();
                 //show product panel
                 pnl_Products.Show();
 
@@ -209,7 +210,7 @@ namespace SomerenUI
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
-
+                pnl_supervisors.Hide();
                 //show order panel
                 pnl_Orders.Show();
                 SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
@@ -242,7 +243,7 @@ namespace SomerenUI
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
-
+                pnl_supervisors.Hide();
                 // show sales
                 pnl_Sales.Show();
 
@@ -261,7 +262,7 @@ namespace SomerenUI
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
-
+                pnl_supervisors.Hide();
                 // show activities
                 pnl_Activities.Show();
 
@@ -294,6 +295,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_UpdateActivity.Hide();
                 pnl_DeleteActivity.Hide();
+                pnl_supervisors.Hide();
 
                 //show add activity
                 pnl_AddActivity.Show();
@@ -311,6 +313,7 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_DeleteActivity.Hide();
+                pnl_supervisors.Hide();
 
                 //show update activity
                 pnl_UpdateActivity.Show();
@@ -328,8 +331,49 @@ namespace SomerenUI
                 pnl_Activities.Hide();
                 pnl_AddActivity.Hide();
                 pnl_UpdateActivity.Hide();
+                pnl_supervisors.Hide();
                 //show delete activity
                 pnl_DeleteActivity.Show();
+            }
+            else if (panelName == "Supervisors")
+            {
+                //hide all others
+                pnl_Dashboard.Hide();
+                pnl_Rooms.Hide();
+                pnl_Students.Hide();
+                pnl_teachers.Hide();
+                pnl_Products.Hide();
+                pnl_Orders.Hide();
+                pnl_Sales.Hide();
+                pnl_Activities.Hide();
+                pnl_AddActivity.Hide();
+                pnl_UpdateActivity.Hide();
+                pnl_DeleteActivity.Hide();
+                //show delete activity
+                pnl_supervisors.Show();
+
+                //Fill the teacher combobox
+                SomerenLogic.Teacher_Service teacherService = new SomerenLogic.Teacher_Service();
+                List<Teacher> teacherList = teacherService.GetTeachers();
+
+                comboBoxTeacher.Items.Clear();
+
+                foreach (SomerenModel.Teacher t in teacherList)
+                {
+                    comboBoxTeacher.Items.Add(t.TeacherID + " - " + t.FirstName + " " + t.LastName);
+                }
+
+                //Fill the Activity combobox
+                SomerenLogic.Event_Service eventService = new SomerenLogic.Event_Service();
+                List<Event> eventList = eventService.GetEvents();
+
+                comboBoxEvent.Items.Clear();
+
+                foreach (SomerenModel.Event e in eventList)
+                {
+                    comboBoxEvent.Items.Add(e.ID + " - " + e.Description);
+                }
+
             }
         }
 
@@ -569,6 +613,48 @@ namespace SomerenUI
             {
                 txt_DeleteActivityID.Text = "";
             }
+        }
+
+        private void supervisorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Supervisors");
+        }
+
+        private void btn_newsupervisor_Click(object sender, EventArgs e)
+        {
+            //get teacherid
+            string teacherInput = comboBoxTeacher.SelectedItem.ToString();
+            string selectedTeacher = teacherInput.Substring(0, 2);
+            selectedTeacher = selectedTeacher.Replace(" ", String.Empty);
+            int selectedTeacherID = int.Parse(selectedTeacher);
+            //get activityid
+            string activityInput = comboBoxSupervisor.SelectedItem.ToString();
+            string selectedActivity = activityInput.Substring(0, 2);
+            selectedActivity = selectedActivity.Replace(" ", String.Empty);
+            int selectedActivityID = int.Parse(selectedActivity);
+
+            //send new supervisor
+            try
+            {
+                Supervisor_DAO supervisor_db = new Supervisor_DAO();
+                supervisor_db.Db_Send_NewSupervisor(selectedTeacherID, selectedActivityID);
+                MessageBox.Show("Successfully placed order.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString(), "Error while placing order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void btn_deletesupervisor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_supervisors_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

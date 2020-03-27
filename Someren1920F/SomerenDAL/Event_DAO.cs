@@ -1,42 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+using System.Collections.ObjectModel;
 using SomerenModel;
+using System.Data.SqlTypes;
 
 namespace SomerenDAL
 {
     public class Event_DAO : Base
     {
-        public List<Event> GetAllEventsBeween(DateTime begindate, DateTime enddate)
+        public List<Event> Db_GetAllEvents()
         {
-            List<Event> le = new List<Event>();
-            SqlParameter sqlParameter1 = new SqlParameter("@beginDate", begindate);
-            SqlParameter sqlParameter2 = new SqlParameter("@endDate", enddate);
-            SqlParameter[] sqlp = new SqlParameter[] { sqlParameter1, sqlParameter2 };
-
-            return ReadTables(ExecuteSelectQuery("GetAllEventsBetween", sqlp));
+            return ReadTables(ExecuteSelectQuery("GetAllEvents"));
         }
 
-        private List<Event> ReadTables(DataTable dt)
+        private List<Event> ReadTables(DataTable dataTable)
         {
             List<Event> events = new List<Event>();
 
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dataTable.Rows)
             {
-                int eid = (int)dr["EventId"];
-                DateTime date = (DateTime)dr["Date"];
-                string desc = (string)dr["Description"];
-                string actname = (string)dr["Name"];
-                int supid = (int)dr["PersonId"];
-                Event e = new Event(eid, date, desc, supid, actname);
-                events.Add(e);
+                int id = (int)dr["ProductID"];
+                DateTime date = (DateTime)(dr["Date"]);
+                string description = (string)(dr["Description"].ToString());
+                int supervisorId = (int)dr["SuperVisorID"];
+                int activityId = (int)dr["ActivityID"];
+                int eventJunctionId = (int)dr["EventJunctionID"];
+                Event eventt = new Event(id, date, description, supervisorId, activityId, eventJunctionId);
+                events.Add(eventt);
             }
-
-            return events;    
+            return events;
         }
     }
 }
