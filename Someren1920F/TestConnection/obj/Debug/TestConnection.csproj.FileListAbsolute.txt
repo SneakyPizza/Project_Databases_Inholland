@@ -36,3 +36,16 @@ D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\
 D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.csproj.CopyComplete
 D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.exe
 D:\Documents\GitHub\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.pdb
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\TestConnection.exe.config
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\TestConnection.exe
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\TestConnection.pdb
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenDAL.dll
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenModel.dll
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenDAL.pdb
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenDAL.dll.config
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\bin\Debug\SomerenModel.pdb
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.csprojAssemblyReference.cache
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.csproj.CoreCompileInputs.cache
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.csproj.CopyComplete
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.exe
+C:\Users\Koen\Documents\GitHub\Programeren-3\Project_Databases_Inholland\Someren1920F\TestConnection\obj\Debug\TestConnection.pdb
