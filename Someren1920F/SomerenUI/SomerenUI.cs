@@ -353,25 +353,31 @@ namespace SomerenUI
                 pnl_supervisors.Show();
 
                 //Fill the teacher combobox
-                SomerenLogic.Teacher_Service teacherService = new SomerenLogic.Teacher_Service();
-                List<Teacher> teacherList = teacherService.GetTeachers();
+                SomerenLogic.Supervisor_Service SupervisorService = new SomerenLogic.Supervisor_Service();
+                List<Supervisor> supervisorList = SupervisorService.GetSupervisors();
 
-                comboBoxTeacher.Items.Clear();
+                listViewSupervisors.Items.Clear();
+
+                foreach (SomerenModel.Supervisor t in supervisorList)
+                {
+
+                    ListViewItem li = new ListViewItem(t.SupervisorID.ToString());
+                    li.SubItems.Add(t.FirstName);
+                    li.SubItems.Add(t.LastName);
+                    listViewSupervisors.Items.Add(li);
+                }
+ 
+                foreach (SomerenModel.Supervisor t in supervisorList)
+                {
+                    comboBoxSupervisor.Items.Add(t.SupervisorID + " - " + t.FirstName + " " + t.LastName);
+                }
+
+                SomerenLogic.Teacher_Service TeacherService = new SomerenLogic.Teacher_Service();
+                List<Teacher> teacherList = TeacherService.GetTeachers();
 
                 foreach (SomerenModel.Teacher t in teacherList)
                 {
                     comboBoxTeacher.Items.Add(t.TeacherID + " - " + t.FirstName + " " + t.LastName);
-                }
-
-                //Fill the Activity combobox
-                SomerenLogic.Event_Service eventService = new SomerenLogic.Event_Service();
-                List<Event> eventList = eventService.GetEvents();
-
-                comboBoxEvent.Items.Clear();
-
-                foreach (SomerenModel.Event e in eventList)
-                {
-                    comboBoxEvent.Items.Add(e.ID + " - " + e.Description);
                 }
 
             }
@@ -529,16 +535,6 @@ namespace SomerenUI
             showPanel("UpdateActivity");
         }
 
-        private void Pnl_Activities_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Pnl_UpdateActivity_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Btn_CancelUpdate_Click(object sender, EventArgs e)
         {
             txt_UpdateActivityID.Text = "";
@@ -627,13 +623,25 @@ namespace SomerenUI
             string selectedTeacher = teacherInput.Substring(0, 2);
             selectedTeacher = selectedTeacher.Replace(" ", String.Empty);
             int selectedTeacherID = int.Parse(selectedTeacher);
-            //get activityid
-            string activityInput = comboBoxEvent.SelectedItem.ToString();
-            string selectedActivity = activityInput.Substring(0, 2);
-            selectedActivity = selectedActivity.Replace(" ", String.Empty);
-            int selectedActivityID = int.Parse(selectedActivity);
+            int roleID = 2;
+            //send db
+            try
+            {
+                
+                Supervisor_DAO supervisor_db = new Supervisor_DAO();
+                supervisor_db.Db_Supervisor(selectedTeacherID, roleID);
+                MessageBox.Show("Successfully added supervisor.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString(), "Error adding supervisor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            showPanel("");
+            showPanel("Supervisors");
+
 
             //send new supervisor
+            /*
             try
             {
                 Supervisor_DAO supervisor_db = new Supervisor_DAO();
@@ -644,11 +652,39 @@ namespace SomerenUI
             {
                 MessageBox.Show(error.ToString(), "Error while placing order", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+            */
         }
 
         private void btn_deletesupervisor_Click(object sender, EventArgs e)
         {
+            //get teacherid
+            string supervisorInput = comboBoxSupervisor.SelectedItem.ToString();
+            string selectedSupervisor = supervisorInput.Substring(0, 2);
+            selectedSupervisor = selectedSupervisor.Replace(" ", String.Empty);
+            int selectedTeacherID = int.Parse(selectedSupervisor);
+            int roleID = 1;
+            //send db
+            DialogResult dialogResult = MessageBox.Show( "Do you want to delete this supervisor?", "Information", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+
+                    Supervisor_DAO supervisor_db = new Supervisor_DAO();
+                    supervisor_db.Db_Supervisor(selectedTeacherID, roleID);
+                    MessageBox.Show("Successfully deleted supervisor.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.ToString(), "Error deleting supervisor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("Supervisor has not been deleted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            showPanel("");
+            showPanel("Supervisors");
 
         }
 
